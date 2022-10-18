@@ -10,7 +10,7 @@ export class UserModel extends TimeStamps{
     email:string
 
     @prop()
-    password:number
+    password:string
 
     @prop()
     name:string

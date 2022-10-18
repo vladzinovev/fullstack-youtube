@@ -9,5 +9,5 @@ export class AuthDto{
     })
 
     @IsString()
-    password:number
+    password:string
 }
