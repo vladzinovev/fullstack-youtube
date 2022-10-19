@@ -1,14 +1,18 @@
+import Image from "next/image";
 import Link from "next/link";
 import {FC} from "react";
 import logoImg from '../../../assets/img/common/logo.png';
-
+import avatarImg from '../../../assets/img/common/avatar.jpg';
+import {MdPermMedia, MdSupport} from 'react-icons/md';
 
 const Sidebar:FC=()=>{
     return (
         <section className="sidebar">
-				<Link href="/" className="logo" rel="noreferrer"><img src="img/common/logo.png" alt="Youtube"/></Link>
+				<Link href="/" className="logo" rel="noreferrer">
+                    <Image src={logoImg.src} alt="Youtube" width={130} height={42}/>
+                </Link>
 				<div className="profile_info">
-					<img src="img/main/avatar.jpg" alt=""/>
+                    <Image src={avatarImg.src} alt="" width={70} height={70}/>
 					<div className="name">Nannie Nelson</div>
 					<div className="location">Montreal, QC</div>
 				</div>
