@@ -6,7 +6,7 @@ module.exports = {
     "./app/components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: '#CD313A',
   },
   plugins: [],
 }

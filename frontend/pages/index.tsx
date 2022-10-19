@@ -1,12 +1,8 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import type { NextPage } from 'next';
+import Home from '../app/components/pages/home/home';
 
-const Home: NextPage = () => {
-  return (
-    <div>Главная</div>
-  )
+const HomePage: NextPage = () => {
+  return <Home/>
 }
 
-export default Home
+export default HomePage;
