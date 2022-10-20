@@ -1,5 +1,7 @@
 import {FC} from "react";
+import { useAuth } from "../../../hooks/UseAuth";
 import Header from "../../layout/header/Header";
+import Layout from "../../layout/Layout";
 import RightSide from "../../layout/right-side/RightSide";
 import Sidebar from "../../layout/sidebar/Sidebar";
 import Line from "../../ui/Line";
@@ -8,12 +10,11 @@ import WeeklyFeatured from "./weekly-featured/WeeklyFeatured";
 
 
 const Home:FC=()=>{
+
+    const {user}=useAuth();
     return (
-        <main id="youtube_main">
-			<Sidebar/>
-			<section className="content">
-				<Header/>
-				<div id="wrapper_content">
+        <Layout title="Youtube 2.0">
+            <div id="wrapper_content">
 					<div className="left_side">
 
 						<WeeklyFeatured/>
@@ -23,8 +24,7 @@ const Home:FC=()=>{
 					</div>
 					<RightSide/>
 				</div>
-			</section>
-		</main>
+        </Layout>
     )
 }
 
