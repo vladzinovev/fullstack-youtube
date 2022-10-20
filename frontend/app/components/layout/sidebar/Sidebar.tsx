@@ -10,7 +10,7 @@ const Sidebar:FC=()=>{
 
     const {user}=useAuth();
 
-    return (
+    return user ? (
         <section className="sidebar">
 				<Link href="/" className="logo" rel="noreferrer">
                     <img src={logoImg.src} alt="Youtube"/>
@@ -65,7 +65,7 @@ const Sidebar:FC=()=>{
 					© 2020 Youtube, LLC
 				</div>
 			</section>
-    )
+    ): null;
 }
 
 export default Sidebar;

@@ -17,6 +17,7 @@ const Layout:FC<PropsWithChildren<{title:string}>>=({children,title})=>{
                     <Sidebar/>
                     {/* content-full срабатывает когда нет user */}
                     <section className={cn("content",{'content-full':!user})}> 
+                    {/* <section className="content">  */}
                     
                         <Header/>
                         <div className='content-wrapper'>
