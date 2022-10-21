@@ -761,7 +761,8 @@ img {
   content: '';
   width: 10px;
   height: 10px;
-  background-image: url("../../../public/img/common/correct.svg");
+  /* background-image: url("../../../public/img/common/correct.svg"); */
+  background-image: url("../public/img/common/correct.svg");
   background-position: center;
   background-repeat: no-repeat;
   margin-left: 15px;

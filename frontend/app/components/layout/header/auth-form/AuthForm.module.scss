@@ -1,0 +1,14 @@
+.wrapper{
+    position:relative;
+    display:inline-flex;
+}
+.button{
+    text-decoration: none;
+    display: inline-flex;
+    margin: 0 12px;
+    align-items: center;
+    justify-content: center;
+    >img{
+        max-width: 25px;
+    }
+}

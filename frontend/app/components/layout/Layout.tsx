@@ -16,8 +16,7 @@ const Layout:FC<PropsWithChildren<{title:string}>>=({children,title})=>{
                 <main id="youtube_main">
                     <Sidebar/>
                     {/* content-full срабатывает когда нет user */}
-                    <section className={cn("content",{'content-full':!user})}> 
-                    {/* <section className="content">  */}
+                    <section className={cn("content",{'content-full':!user})}>
                     
                         <Header/>
                         <div className='content-wrapper'>
