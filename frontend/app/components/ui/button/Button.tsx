@@ -1,10 +1,16 @@
-import { FC } from "react";
+import { FC, PropsWithChildren } from "react";
+import cn from 'classnames';
+import styles from './Button.module.scss';
+
+import { IButton } from "./Button.interface";
 
 
-const Button:FC=()=>{
-    return <div>
-
-    </div>
+const Button:FC<PropsWithChildren<IButton>>=({children,className, ...rest})=>{
+    return (
+        <button className={cn(styles.button,className)} {...rest}>
+            {children}
+        </button>
+    )
 }
 
 export default Button;
