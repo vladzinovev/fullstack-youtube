@@ -4,5 +4,20 @@
     "semi":false,
     "tabWidth":2,
     "jsxSingleQuote":true,
-    "singleQuote":true
+    "singleQuote":true,
+    "importOrder":[
+        "<THIRD_PARTY_MODULES>",
+        "^@/components/(.*)$",
+        "^@/assets/(.*)$",
+        "^@/hooks/(.*)$",
+        "^@/providers/(.*)$",
+        "^@/services/(.*)$",
+        "^@/services/(.*)$",
+        "^@/services/(.*)$",
+        "^../(.*)$",
+        "^./(.*)$",
+        "^(.scss)$"
+    ],
+    "importOrderSeparation":true,
+    "importOrderSortSpecifiers":true
 }

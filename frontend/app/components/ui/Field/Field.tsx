@@ -1,11 +1,11 @@
 import { FC, forwardRef } from "react";
-import { IInput } from "./input.interface";
+import { IInput } from "./Field.interface";
 import cn from 'classnames';
-import styles from './Input.module.scss';
+import styles from './Field.module.scss';
 
 
 // eslint-disable-next-line react/display-name
-const Input:FC=forwardRef<HTMLInputElement,IInput>(
+const Field:FC=forwardRef<HTMLInputElement,IInput>(
     ({error,type='text',style,...rest},ref)=>{
         return (
             <div className={styles.input} style={style}>
@@ -16,6 +16,6 @@ const Input:FC=forwardRef<HTMLInputElement,IInput>(
     }
 )
 
-Input.displayName='input';
+Field.displayName='field';
 
-export default Input;
+export default Field;
