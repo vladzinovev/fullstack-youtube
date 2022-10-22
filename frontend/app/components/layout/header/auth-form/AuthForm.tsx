@@ -47,8 +47,8 @@ const AuthForm:FC=()=>{
                         })
                     }
                 placeholder='Password' error={errors.password}/>
-                <Button type='submit' onClick={()=>setType('login')}>Login</Button>
-                <button className={'text-sm'} onClick={()=>setType('register')}>Register</button>
+                <Button className={'mt-2 mx-auto inline-block'} type='submit' onClick={()=>setType('login')}>Login</Button>
+                <button className={styles.register} onClick={()=>setType('register')}>Register</button>
                 
             </form>
 
