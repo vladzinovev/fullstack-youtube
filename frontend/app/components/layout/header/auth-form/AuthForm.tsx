@@ -1,4 +1,5 @@
 import Button from "@/components/ui/Button/Button";
+import { useOutSide } from "@/hooks/useOutSide";
 import { FC, useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { FaUserCircle } from "react-icons/fa";
@@ -8,6 +9,8 @@ import { validEmail } from "./auth.constants";
 import styles from './AuthForm.module.scss';
 
 const AuthForm:FC=()=>{
+
+    const {ref,isShow,setIsShow}=useOutSide(false);
 
     const [type,setType]=useState<'login'|'register'>('login');
 
@@ -22,35 +25,39 @@ const AuthForm:FC=()=>{
     }
 
     return (
-        <div className={styles.wrapper}>
-            <button className={styles.button}>
-                <FaUserCircle fill='#A4A4A4'/>
+        <div className={styles.wrapper} ref={ref}>
+            <button className={styles.button} onClick={()=>setIsShow(!isShow)}>
+                <FaUserCircle fill='#A4A4A4' style={{width:'30px', height:'30px'}}/>
             </button>
-            <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
-                <Field 
-                    {...register('email',{
-                            required:'Email is required',
-                            pattern:{
-                                value:validEmail,
-                                message:'Please enter a valid email address',
-                            },
-                        })
-                    }
-                placeholder='Email' error={errors.email}/>
-                <Field 
-                    {...register('password',{
-                            required:'Password is required',
-                            minLength:{
-                                value:6,
-                                message:'Please enter a valid password address',
-                            },
-                        })
-                    }
-                placeholder='Password' error={errors.password}/>
-                <Button className={'mt-2 mx-auto inline-block'} type='submit' onClick={()=>setType('login')}>Login</Button>
-                <button className={styles.register} onClick={()=>setType('register')}>Register</button>
-                
-            </form>
+            {isShow && 
+                <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
+                    <Field 
+                        {...register('email',{
+                                required:'Email is required',
+                                pattern:{
+                                    value:validEmail,
+                                    message:'Please enter a valid email address',
+                                },
+                            })
+                        }
+                    placeholder='Email' error={errors.email}/>
+                    <Field 
+                        {...register('password',{
+                                required:'Password is required',
+                                minLength:{
+                                    value:6,
+                                    message:'Please enter a valid password address',
+                                },
+                            })
+                        }
+                    placeholder='Password' error={errors.password}/>
+                    <div className={styles.login}>
+                        <Button type='submit' onClick={()=>setType('login')}>Login</Button>
+                    </div>
+                    <button className={styles.register} onClick={()=>setType('register')}>Register</button>
+                </form>
+            }
+            
 
         </div>
     )

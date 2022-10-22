@@ -13,18 +13,19 @@ const Layout:FC<PropsWithChildren<{title:string}>>=({children,title})=>{
         <>
             <Head>
                 <title>{title}</title>
-                <main id="youtube_main">
-                    <Sidebar/>
-                    {/* content-full срабатывает когда нет user */}
-                    <section className={cn("content",{'content-full':!user})}>
-                    
-                        <Header/>
-                        <div className='content-wrapper'>
-                            {children}
-                        </div>
-                    </section>
-                </main>
             </Head>
+            <main id="youtube_main">
+                <Sidebar/>
+                {/* content-full срабатывает когда нет user */}
+                <section className={cn("content",{'content-full':!user})}>
+                
+                    <Header/>
+                    <div className='content-wrapper'>
+                        {children}
+                    </div>
+                </section>
+            </main>
+            
         </>
         
     )

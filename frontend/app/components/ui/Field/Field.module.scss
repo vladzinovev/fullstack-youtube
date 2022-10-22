@@ -1,7 +1,18 @@
 .input{
-    @apply relative ;
+    position:relative;
+    display:block;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    >input{
+        @apply w-full border-b;
+
+        &::placeholder{
+            color:#A4A4A4;
+        }
+    }
 }
 .error{
-    @apply absolute -bottom-6 left-0 text-sm w-full;
-    position: absolute;
+    @apply absolute -bottom-4 left-0 text-sm w-full;
+    font-size:0.5rem;
+    color: red;
 }
