@@ -8,6 +8,8 @@ import Field from "../../../ui/Field/Field";
 import { IAuthFields } from "./auth-form.interface";
 import { validEmail } from "./auth.constants";
 import styles from './AuthForm.module.scss';
+import {useMutation} from 'react-query';
+import { AuthService } from "@/services/auth.service";
 
 const AuthForm:FC=()=>{
 
@@ -20,10 +22,16 @@ const AuthForm:FC=()=>{
         mode: 'onChange'
     });
     
-    
+    const {setData}=useAuth();
+
+    const {mutate:login}=useMutation('login', (data:IAuthFields)=>AuthService.login(data.email, data.password),{
+        onSuccess(data){
+            if(setData) setData(data)
+        }
+    })
 
     const onSubmit:SubmitHandler<IAuthFields>=(data)=>{
-        if(type==='login') console.log('login',data.email);
+        if(type==='login') login(data);
         else if (type==='register') console.log('register',data.email);
     }
 
@@ -53,7 +61,7 @@ const AuthForm:FC=()=>{
                                 },
                             })
                         }
-                    placeholder='Password' error={errors.password}/>
+                    placeholder='Password' error={errors.password} type={'password'}/>
                     <div className={styles.login}>
                         <Button type='submit' onClick={()=>setType('login')}>Login</Button>
                     </div>

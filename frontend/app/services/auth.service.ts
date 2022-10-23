@@ -11,7 +11,7 @@ export const AuthService={
         if(response.data.accessToken){
             saveToStorage(response.data)
         }
-        return response
+        return response.data
     },
 
     async register(email:string, password:string){
@@ -21,7 +21,7 @@ export const AuthService={
         if(response.data.accessToken){
             saveToStorage(response.data)
         }
-        return response
+        return response.data
     },
     Logout(){
         removeTokenFromStorage();
