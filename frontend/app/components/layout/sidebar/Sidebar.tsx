@@ -5,10 +5,12 @@ import logoImg from '../../../../public/img/common/logo.png';
 import avatarImg from '../../../../public/img/main/avatar.jpg';
 import {MdPermMedia, MdSupport} from 'react-icons/md';
 import { useAuth } from "../../../hooks/UseAuth";
+import { AuthService } from "@/services/auth.service";
+import { defaultValueAuthState } from "@/providers/AuthProvider";
 
 const Sidebar:FC=()=>{
 
-    const {user}=useAuth();
+    const {user,setData}=useAuth();
 
     return user ? (
         <section className="sidebar">
@@ -60,7 +62,10 @@ const Sidebar:FC=()=>{
 					<p>Light On</p>
 				</div>
 
-				<a href="#" id="logout_btn">Logout</a>
+				<button id="logout_btn" onClick={()=>{
+					AuthService.Logout();
+            		setData && setData(defaultValueAuthState);}}>Logout</button>
+
 				<div className="copy">
 					© 2020 Youtube, LLC
 				</div>

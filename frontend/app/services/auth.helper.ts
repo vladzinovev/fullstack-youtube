@@ -1,6 +1,6 @@
 import Cookies from "js-cookie"
 
-interface IAuthData{
+export interface IAuthData{
     user:{
         _id:string,
         email:string

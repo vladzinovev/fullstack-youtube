@@ -9,14 +9,14 @@ export const getContentType=()=>({
 export const axiosClassic=axios.create({
     //baseURL:IS_PRODUCTION ? API_SERVER_URL :API_URL,
     //в режиме разрабоки
-    baseURL:`${process.env.API_URL}/api`,
+    baseURL:`${process.env.APP_URL}/api`,
     headers: getContentType()
 })
 
 //нужен делать запросы с авторизацией
 const instance=axios.create({
     //в режиме разрабоки
-    baseURL:`${process.env.API_URL}/api`,
+    baseURL:`${process.env.APP_URL}/api`,
     headers: getContentType()
 })
 
