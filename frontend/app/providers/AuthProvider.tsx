@@ -1,23 +1,17 @@
+import { IAuthData } from "@/services/auth.helper";
 import { createContext, Dispatch, FC, PropsWithChildren, SetStateAction, useContext, useState } from "react";
 
-interface IData{
-    user:{
-        _id:string,
-        email:string
-    } | null,
-    accessToken:string,
-    
-}
 
-interface IContext extends IData{
-    setData:null| Dispatch<SetStateAction<IData>>
+
+interface IContext extends IAuthData{
+    setData:null| Dispatch<SetStateAction<IAuthData>>
 }
 
 export const AuthContext=createContext<IContext>({}as IContext)
 
 const AuthProvider:FC<PropsWithChildren<unknown>>=({children})=>{
     
-    const [data, setData]=useState<IData>({
+    const [data, setData]=useState<IAuthData>({
         user:null,
         accessToken:'',
     });
