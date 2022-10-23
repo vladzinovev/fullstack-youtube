@@ -1,4 +1,5 @@
 import Button from "@/components/ui/Button/Button";
+import { useAuth } from "@/hooks/UseAuth";
 import { useOutSide } from "@/hooks/useOutSide";
 import { FC, useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
@@ -18,10 +19,12 @@ const AuthForm:FC=()=>{
         //чтобы срабатывала проверка при пустом поле
         mode: 'onChange'
     });
+    
+    
 
     const onSubmit:SubmitHandler<IAuthFields>=(data)=>{
-        if(type==='login') console.log('login',data.email)
-        else if (type==='register') console.log('register',data.email)
+        if(type==='login') console.log('login',data.email);
+        else if (type==='register') console.log('register',data.email);
     }
 
     return (
@@ -64,3 +67,5 @@ const AuthForm:FC=()=>{
 }
 
 export default AuthForm;
+
+
