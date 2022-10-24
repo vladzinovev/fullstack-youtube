@@ -4,6 +4,7 @@ import { genSalt, hash } from 'bcryptjs';
 import { InjectModel } from 'nestjs-typegoose';
 import { UserDto } from './user.dto';
 import { UserModel } from './user.model';
+import { Types } from 'mongoose';
 
 @Injectable()
 export class UserService {
@@ -11,18 +12,18 @@ export class UserService {
         @InjectModel(UserModel) private readonly UserModel:ModelType<UserModel>
     ) {}
 
-    async byId(_id:string){
-        const user=await this.UserModel.findById(_id);
+    async byId(_id:Types.ObjectId){
+        const user=await this.UserModel.findById(_id,'-password -__v');
         if(!user) throw new UnauthorizedException('User not found');
 
         return user;
     }
 
-    async updateProfile(_id:string,dto:UserDto){
+    async updateProfile(_id:Types.ObjectId,dto:UserDto){
         const user = await this.byId(_id)
 
         const isSameUser=await this.UserModel.findOne({email:dto.email})
-        if(isSameUser && _id===String(isSameUser._id)) throw new NotFoundException('Email is busy');
+        if(isSameUser && String(_id)===String(isSameUser._id)) throw new NotFoundException('Email is busy');
 
         if(dto.password){
             const salt = await genSalt(10)
