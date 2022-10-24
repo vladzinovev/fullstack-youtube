@@ -25,7 +25,6 @@ export class UserController {
   }
 
   @Get('most-popular')
-  @Auth()
   async getMostPopular(){
     return this.userService.getMostPopular();
   }
