@@ -19,7 +19,7 @@ export class VideoService {
         return video;
     }
 
-    async getMostPopularByView(){
+    async getMostPopularByViews(){
         return this.VideoModel.find({views:{$gt:0}}, '-__v').sort({view:-1}).exec()
     }
 

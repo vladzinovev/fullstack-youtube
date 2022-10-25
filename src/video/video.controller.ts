@@ -21,6 +21,12 @@ export class VideoController {
     return this.videoService.byUserId(userId);
   }
 
+  @Get('by-user-private')
+  @Auth()
+  async getVideoByUserIdPrivate(@CurrentUser('_id') _id:Types.ObjectId){
+    return this.videoService.byUserId(_id,true);
+  }
+
   @Get()
   async getAll(@Query('searchTerm') searchTerm?:string){
     return this.videoService.getAll(searchTerm);
