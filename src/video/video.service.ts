@@ -1,4 +1,4 @@
-import { Injectable, NotFoundException, RequestTimeoutException, UnauthorizedException } from '@nestjs/common';
+import { BadRequestException, Injectable, NotFoundException, RequestTimeoutException, UnauthorizedException } from '@nestjs/common';
 import { ModelType } from '@typegoose/typegoose/lib/types';
 import { Types } from 'mongoose';
 import { InjectModel } from 'nestjs-typegoose';
@@ -12,8 +12,9 @@ export class VideoService {
         @InjectModel(VideoModel) private readonly VideoModel:ModelType<VideoModel>
     ) {}
 
-    async byId(_id:Types.ObjectId){
-        const video=await this.VideoModel.findOne({_id, isPublic:true},'-__v');
+    async byId(_id:Types.ObjectId, isPublic=true){
+        //Check authUser===video.userId
+        const video=await this.VideoModel.findOne(isPublic?{_id, isPublic:true} :{_id},'-__v');
         if(!video) throw new UnauthorizedException('Video not found');
 
         return video;
@@ -36,7 +37,7 @@ export class VideoService {
 
             }
         }
-        return this.VideoModel.find(options).find({isPublic:true}, '-__v').sort({createdAt:'desc'}).exec()
+        return this.VideoModel.find({...options,isPublic:true}).select('-__v').sort({createdAt:'desc'}).exec()
     }
 
     async byUserId(userId:Types.ObjectId, isPrivate =false){
@@ -83,6 +84,8 @@ export class VideoService {
         return updateVideo
     }
     async updateReacton(_id:string, type:'inc'|'dis'){
+        if(!type) throw new BadRequestException('type query is invalid ')
+
         const updateVideo = await this.VideoModel.findByIdAndUpdate(_id,{
             $inc:{likes: type === 'inc' ? 1 : -1}   
         },{

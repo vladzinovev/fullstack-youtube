@@ -2,6 +2,7 @@ import { Controller, Get, Post, Body, Patch, Param, Delete, UsePipes, Validation
 import { isConstructor } from '@typegoose/typegoose/lib/internal/utils';
 import { Types } from 'mongoose';
 import { Auth } from 'src/auth/decorators/auth.decorators';
+import { IdValidationPipe } from 'src/pipes/id.validation.pipe';
 import { CurrentUser } from './decorators/user.decorator';
 import { UserDto } from './user.dto';
 import { UserService } from './user.service';
@@ -22,6 +23,14 @@ export class UserController {
   @Auth()
   async updateProfile(@CurrentUser('_id') _id:Types.ObjectId, @Body() dto:UserDto){
     return this.userService.updateProfile(_id,dto)
+  }
+
+  @UsePipes(new ValidationPipe())
+  @HttpCode(200)
+  @Put(':id')
+  @Auth()
+  async updateUser(@Param('id', IdValidationPipe) id:Types.ObjectId, @Body() dto: UserDto){
+    return this.userService.updateProfile(id,dto)
   }
 
   @Get('most-popular')

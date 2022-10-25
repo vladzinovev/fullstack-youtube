@@ -38,9 +38,7 @@ export class UserService {
         user.bannerPath=dto.bannerPath;
         user.avatarPath=dto.avatarPath;
 
-        await user.save();
-
-        return
+        return await user.save();
 
     }
 

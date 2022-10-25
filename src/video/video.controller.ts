@@ -11,8 +11,10 @@ import { VideoService } from './video.service';
 export class VideoController {
   constructor(private readonly videoService: VideoService) {}
 
-  @Get(':id')
-  async getVideo(@Param('id',IdValidationPipe) id:Types.ObjectId){
+
+  @Get('get-private/:id')
+  @Auth()
+  async getVideoPrivate(@Param('id',IdValidationPipe) id:Types.ObjectId){
     return this.videoService.byId(id);
   }
 
@@ -35,6 +37,11 @@ export class VideoController {
   @Get('most-popular')
   async getMostPopularByViews(){
     return this.videoService.getMostPopularByViews();
+  }
+
+  @Get(':id')
+  async getVideo(@Param('id',IdValidationPipe) id:Types.ObjectId){
+    return this.videoService.byId(id);
   }
 
   @UsePipes(new ValidationPipe())
