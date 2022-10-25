@@ -8,6 +8,7 @@ import { VideoModule } from './video/video.module';
 import { CommentModule } from './comment/comment.module';
 import { AuthModule } from './auth/auth.module';
 import { getMongoConfig } from './config/mongo.config';
+import { MediaModule } from './media/media.module';
 
 @Module({
   imports: [
@@ -20,7 +21,7 @@ import { getMongoConfig } from './config/mongo.config';
     UserModule, 
     VideoModule, 
     CommentModule, 
-    AuthModule],
+    AuthModule, MediaModule],
   controllers: [AppController],
   providers: [AppService],
 })
