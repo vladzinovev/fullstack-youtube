@@ -1,7 +1,7 @@
 import{ArgumentMetadata,BadRequestException,PipeTransform,} from '@nestjs/common';
 import { Types } from 'mongoose';
 
-export class idvalidationpipe implements PipeTransform{
+export class IdValidationPipe implements PipeTransform{
     transform(value: string, meta: ArgumentMetadata) {
         if(meta.type==='param') return value
 
