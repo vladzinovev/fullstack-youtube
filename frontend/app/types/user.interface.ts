@@ -9,6 +9,6 @@ export interface IUser {
     createdAt: string
     updatedAt: string
     videosCount?: number
-
-
 }
+
+export interface IUserDto extends Pick<IUser, 'email' | 'description' | 'name' | 'location' | 'avatarPath'>{}
