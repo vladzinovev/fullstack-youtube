@@ -35,7 +35,6 @@ export class UserService {
         user.password=dto.password;
         user.description=dto.description;
         user.location=dto.location;
-        user.bannerPath=dto.bannerPath;
         user.avatarPath=dto.avatarPath;
 
         return await user.save();

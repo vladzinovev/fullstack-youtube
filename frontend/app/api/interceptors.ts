@@ -31,5 +31,6 @@ instance.interceptors.request.use(config=>{
     return config;
 })
 
+export default instance;
 //когда получаем ответ с сервера
 instance.interceptors.response.use()

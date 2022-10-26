@@ -2,11 +2,13 @@ import Image from "next/image";
 import Link from "next/link";
 import {FC} from "react";
 import logoImg from '../../../../public/img/common/logo.png';
-import avatarImg from '../../../../public/img/main/avatar.jpg';
+
 import {MdPermMedia, MdSupport} from 'react-icons/md';
 import { useAuth } from "../../../hooks/UseAuth";
 import { AuthService } from "@/services/auth.service";
 import { defaultValueAuthState } from "@/providers/AuthProvider";
+import Line from "@/components/ui/Line";
+import ProfileInfo from "./ProfileInfo";
 
 const Sidebar:FC=()=>{
 
@@ -17,22 +19,10 @@ const Sidebar:FC=()=>{
 				<Link href="/" className="logo" rel="noreferrer">
                     <img src={logoImg.src} alt="Youtube"/>
                 </Link>
-				<div className="profile_info">
-                    <img src={avatarImg.src} alt="" width={70} height={70}/>
-					<div className="name">Nannie Nelson</div>
-					<div className="location">Montreal, QC</div>
-				</div>
-				<div className="information">
-					<div className="item">
-						<div className="top">278</div>
-						<div className="bottom">videos</div>
-					</div>
-					<div className="item">
-						<div className="top">36.5k</div>
-						<div className="bottom">subscribers</div>
-					</div>
-				</div>
+				
+				<ProfileInfo/>
 
+				<Line/>
 				<div className="line"></div>
                 
 				<ul className="mnu_sidebar">
