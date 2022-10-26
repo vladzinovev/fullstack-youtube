@@ -14,7 +14,7 @@ export class UserController {
   @Get('profile')
   @Auth()
   async getProfile(@CurrentUser('_id') _id:Types.ObjectId){
-    return this.userService.byId(_id);
+    return this.userService.getUser(_id);
   }
 
   @UsePipes(new ValidationPipe())
@@ -28,7 +28,7 @@ export class UserController {
   @UsePipes(new ValidationPipe())
   @HttpCode(200)
   @Put(':id')
-  @Auth()
+  @Auth() //Admin
   async updateUser(@Param('id', IdValidationPipe) id:Types.ObjectId, @Body() dto: UserDto){
     return this.userService.updateProfile(id,dto)
   }
