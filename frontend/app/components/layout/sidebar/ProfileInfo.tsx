@@ -1,6 +1,7 @@
 import Loader from '@/components/ui/Loader';
 import { UserService } from '@/services/UserService';
 import { useQuery } from 'react-query';
+import { formatNumberToK } from 'utils/formatNumberToK';
 import avatarImg from '../../../../../public/img/main/avatar.jpg';
 
 const ProfileInfo=()=>{
@@ -30,7 +31,7 @@ const ProfileInfo=()=>{
             </div>
             <div className="item">
                 {/* <div className="top">36.5k</div> */}
-                <div className="top">{data?.subscribersCount}</div>
+                <div className="top">{formatNumberToK(data?.subscribersCount || 0)}</div>
                 <div className="bottom">subscribers</div>
             </div>
         </div>`
