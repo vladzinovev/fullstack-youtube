@@ -18,6 +18,6 @@ export class CommentService {
 
     async create(userId:Types.ObjectId, dto:CommentDto){
 
-        const video=await this.CommentModel.create({...dto, user:userId})
+        const video=await this.CommentModel.create({message:dto.message, video:dto.videoId, user:userId})
     }
 }
