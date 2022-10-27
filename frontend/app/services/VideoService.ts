@@ -15,11 +15,11 @@ export const VideoService={
         return axiosClassic.get<IVideo>(`/video/${id}`)
     },
 
-    async getAll(id:string){
+    async getAll(){
         return axiosClassic.get<IVideo[]>(`/video`)
     },
 
-    async getMostPopular(id:string){
+    async getMostPopular(){
         return axiosClassic.get<IVideo[]>(`/video/most-popular`)
     },
     
@@ -32,7 +32,7 @@ export const VideoService={
     },
 
     async updateVideo(id:string, body:IVideoDto){
-        return axios.put<IVideo>(`/video/${id}`)
+        return axios.put<IVideo>(`/video/${id}`, body)
     },
 
     async updateViews(id:string){
