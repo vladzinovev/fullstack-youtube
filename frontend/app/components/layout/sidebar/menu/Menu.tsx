@@ -11,6 +11,7 @@ const Menu:FC=()=>{
                     {index === 3 && <div className='line_mnu'/>}
                 </Fragment>
             ))} 
+            <div className='line_mnu'/>
         </ul>
 
     )
