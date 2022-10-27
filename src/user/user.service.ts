@@ -13,7 +13,9 @@ export class UserService {
     ) {}
 
     async getUser(_id:Types.ObjectId){
-        return this.UserModel.aggregate().lookup({
+        return this.UserModel.aggregate()
+        .match({_id})
+        .lookup({
             from:'Video',
             foreignField:'user',
             localField:'_id',
@@ -25,6 +27,7 @@ export class UserService {
         })
         .project({__v:0, password:0,videos:0})
         .exec()
+        .then((data=>data[0]))
     }
 
     async byId(_id:Types.ObjectId){

@@ -4,7 +4,7 @@ import { IAuthData, saveToStorage } from "./auth/auth.helper"
 
 export const UserService={
     async getProfile(){
-        return axios.get<IUser>('/user/profile')
+        return axiosClassic.get<IUser>('/user/profile')
     },
 
     async getMostPopular(){
