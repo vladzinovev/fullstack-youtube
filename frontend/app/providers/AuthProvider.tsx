@@ -1,5 +1,5 @@
-import { IAuthData } from "@/services/auth.helper";
-import { AuthService } from "@/services/auth.service";
+import { IAuthData } from "@/services/auth/auth.helper";
+import { AuthService } from "@/services/auth/auth.service";
 import Cookies from "js-cookie";
 import { useRouter } from "next/router";
 import { createContext, Dispatch, FC, PropsWithChildren, SetStateAction, useContext, useEffect, useState } from "react";

@@ -9,7 +9,7 @@ import { IAuthFields } from "./auth-form.interface";
 import { validEmail } from "./auth.constants";
 import styles from './AuthForm.module.scss';
 import {useMutation} from 'react-query';
-import { AuthService } from "@/services/auth.service";
+import { AuthService } from "@/services/auth/auth.service";
 
 const AuthForm:FC=()=>{
 
