@@ -61,12 +61,13 @@
             margin: 10px 0;
             font-size: 14px;
         }
-        >.description{
-            color: $gray;
-            font-size: 12px;
-            margin-bottom: 20px;
-        }
     } 
+    >.description{
+        color: $gray;
+        font-size: 12px;
+        margin-bottom: 20px;
+    }
+    
 	>.number_info{
 		display: -webkit-flex;
 		display: -moz-flex;

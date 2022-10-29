@@ -3,6 +3,7 @@ import { UserService } from '@/services/UserService';
 import { useQuery } from 'react-query';
 import { formatNumberToK } from 'utils/formatNumberToK';
 import avatarImg from '../../../../../public/img/main/avatar.jpg';
+import Image from 'next/image';
 
 const ProfileInfo=()=>{
     const {data,isLoading} = useQuery(
@@ -17,7 +18,7 @@ const ProfileInfo=()=>{
         <>
         `<div className="profile_info">
             {/* <img src={avatarImg.src} alt="" width={70} height={70}/> */}
-            <img src={data?.avatarPath || ''} alt="" width={70} height={70}/>
+            <Image src={data?.avatarPath || ''} alt="" width={120} height={120} quality={90}/>
             {/* <div className="name">Nannie Nelson</div> */}
             <div className="name">{data?.name}</div>
             {/* <div className="location">Montreal, QC</div> */}
