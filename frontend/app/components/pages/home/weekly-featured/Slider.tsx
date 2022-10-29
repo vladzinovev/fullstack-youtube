@@ -14,7 +14,7 @@ const Slider:FC<{videos:IVideo[]}>=({videos})=>{
 
         <Swiper
             modules={[Autoplay]}
-            spaceBetween={7}
+            spaceBetween={10}
             slidesPerView={2}
             className="slider_wf"
             autoplay={{

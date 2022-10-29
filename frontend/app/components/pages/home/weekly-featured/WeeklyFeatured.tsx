@@ -29,7 +29,7 @@ const WeeklyFeatured:FC<IWeeklyFeatured>=({weeklyVideos,randomVideo})=>{
                     </div>
                     <div className="author">Warren Munoz</div>
                     <div className="name">Lake House Vacation! Boating, Tubing & More!</div>
-                    <div className="descr">
+                    <div className="description">
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus animi aut vel alias voluptate, odio. Tempora sequi et itaque enim a, aut excepturi adipisci quam, aspernatur, eaque obcaecati dolor tenetur :)
                     </div>
                     <div className="number_info">
