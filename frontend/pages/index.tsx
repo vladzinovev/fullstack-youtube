@@ -12,7 +12,6 @@ export const getStaticProps:GetStaticProps=async()=>{
   try{
 
     const {data :newVideos} = await VideoService.getAll();
-    const randomVideo={};
     const topVideo={};
     const topChannels:never[]=[]; 
 
@@ -24,7 +23,7 @@ export const getStaticProps:GetStaticProps=async()=>{
       props:{
         newVideos,
         weeklyVideos:shuffle(newVideos).slice(0,5),
-        randomVideo,
+        randomVideo:shuffle(newVideos)[0],
         topVideo,
         topChannels
       },

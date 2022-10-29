@@ -12,7 +12,7 @@ import Recommended from "./recommended/Recommended";
 import WeeklyFeatured from "./weekly-featured/WeeklyFeatured";
 
 
-const Home:FC<IHome>=({weeklyVideos,randomVideo})=>{
+const Home:FC<IHome>=({weeklyVideos,randomVideo, newVideos})=>{
 
     const {user}=useAuth();
     console.log(weeklyVideos);

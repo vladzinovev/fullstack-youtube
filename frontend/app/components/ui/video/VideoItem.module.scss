@@ -1,72 +1,72 @@
 @import '../../../assets/styles/_variables.scss';
 .video_item{
     display: block;
-	>.thumbnail{
-		position: relative;
-		>.live{
-			position: absolute;
-			border-radius: 2px;
-			color: #fff;
-			left: 10px;
-			top: 10px;
-			font-size: 12px;
-			display: -webkit-flex;
-			display: -moz-flex;
-			display: -ms-flex;
-			display: -o-flex;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			width: 50px;
-			height: 20px;
-			background-color: rgba(229, 27, 23, .76);
-		}
-		>time{
-			position: absolute;
-			border-radius: 2px;
-			color: #fff;
-			left: 10px;
-			bottom: 10px;
-			font-size: 12px;
-			display: -webkit-flex;
-			display: -moz-flex;
-			display: -ms-flex;
-			display: -o-flex;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			width: 64px;
-			height: 26px;
-			background-color: rgba(0, 0, 0, .5);
-		}
-		>.avatar{
-			background-color: #fff;
-			padding: 4px;
-			border-radius: 50%;
-			position: absolute;
-			right: 10px;
-			bottom: -18px;
-			>img{
-				width: 36px;
-				height: 36px;
-				border-radius: 50%;
-			}
-		}
-	}
-	>.author{
-		color: $gray;
-		margin-top: 4px;
-	}
-	>.name{
-		font-weight: 500;
-		margin: 10px 0;
-		font-size: 14px;
-	}
-	>.description{
-		color: $gray;
-		font-size: 12px;
-		margin-bottom: 20px;
-	}
+	> a{
+        >.thumbnail{
+            position: relative;
+            >.live{
+                position: absolute;
+                border-radius: 2px;
+                color: #fff;
+                left: 10px;
+                top: 10px;
+                font-size: 12px;
+                display: -webkit-flex;
+                display: -moz-flex;
+                display: -ms-flex;
+                display: -o-flex;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 50px;
+                height: 20px;
+                background-color: rgba(229, 27, 23, .76);
+            }
+            >time{
+                position: absolute;
+                border-radius: 2px;
+                color: #fff;
+                left: 10px;
+                bottom: 10px;
+                font-size: 12px;
+                display: -webkit-flex;
+                display: -moz-flex;
+                display: -ms-flex;
+                display: -o-flex;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 64px;
+                height: 26px;
+                background-color: rgba(0, 0, 0, .5);
+            }
+            >.avatar{
+                background-color: #fff;
+                padding: 4px;
+                border-radius: 50%;
+                position: absolute;
+                right: 10px;
+                bottom: -18px;
+                > span {
+                    @apply rounded-full;
+                }
+            }
+        }
+        >.author{
+            color: $gray;
+            margin-top: 4px;
+        }
+        >.name{
+            font-weight: 500;
+            margin: 10px 0;
+            font-size: 14px;
+        }
+        >.description{
+            color: $gray;
+            font-size: 12px;
+            margin-bottom: 20px;
+        }
+    } 
 	>.number_info{
 		display: -webkit-flex;
 		display: -moz-flex;

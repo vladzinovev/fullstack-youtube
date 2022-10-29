@@ -37,7 +37,7 @@ export class VideoService {
 
             }
         }
-        return this.VideoModel.find({...options,isPublic:true}).select('-__v').popular('user','name').sort({createdAt:'desc'}).exec()
+        return this.VideoModel.find({...options,isPublic:true}).select('-__v').popular('user','name avatarPath').sort({createdAt:'desc'}).exec()
     }
 
     async byUserId(userId:Types.ObjectId, isPrivate =false){

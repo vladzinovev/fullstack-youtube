@@ -1,3 +1,4 @@
+import VideoItem from "@/components/ui/video/VideoItem";
 import { FC } from "react";
 import { IVideo } from "types/video.interface";
 import Slider from "./Slider";
@@ -18,7 +19,8 @@ const WeeklyFeatured:FC<IWeeklyFeatured>=({weeklyVideos,randomVideo})=>{
                 </div>
                 <Slider videos={weeklyVideos}/>
             </div>
-            <div className="top_video">
+            <VideoItem item={randomVideo} isLarge isAvatar/>
+            {/* <div className="top_video">
                 <div className="video_item">
                     <div className="thumbnail">
                         <img src="img/main/3.jpg" alt=""/>
@@ -38,7 +40,7 @@ const WeeklyFeatured:FC<IWeeklyFeatured>=({weeklyVideos,randomVideo})=>{
                         <div className="date">3DS AGO</div>
                     </div>
                 </div>
-            </div>
+            </div> */}
         </div>
     )
 }
