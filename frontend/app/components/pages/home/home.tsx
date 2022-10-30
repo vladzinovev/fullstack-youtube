@@ -24,7 +24,7 @@ const Home:FC<IHome>=({weeklyVideos,randomVideo, newVideos})=>{
 
 						<WeeklyFeatured weeklyVideos={weeklyVideos} randomVideo={randomVideo}/>
 						<Line/>
-                        <Recommended/>
+                        <Recommended newVideos={newVideos}/>
 						
 					</div>
 					<RightSide/>
