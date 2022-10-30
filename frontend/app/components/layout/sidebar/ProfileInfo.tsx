@@ -6,6 +6,8 @@ import avatarImg from '../../../../../public/img/main/avatar.jpg';
 import Image from 'next/image';
 import styles from './ProfileInfo.module.scss';
 
+import cn from 'classnames';
+
 const ProfileInfo=()=>{
     const {data,isLoading} = useQuery(
         'get profile',
@@ -21,7 +23,7 @@ const ProfileInfo=()=>{
             {/* <img src={avatarImg.src} alt="" width={70} height={70}/> */}
             <Image src={data?.avatarPath || ''} alt="" width={120} height={120} quality={90}/>
             {/* <div className="name">Nannie Nelson</div> */}
-            <div className={styles.name}>{data?.name}</div>
+            <div className={cn('name',{verified:data?.isVerified})}>{data?.name}</div>
             {/* <div className="location">Montreal, QC</div> */}
             <div className={styles.location}>{data?.location}</div>
         </div>

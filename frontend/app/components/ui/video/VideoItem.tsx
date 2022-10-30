@@ -8,6 +8,8 @@ import styles from './VideoItem.module.scss';
 import relativeTime from 'dayjs/plugin/relativeTime';
 import Link from "next/link";
 import { IVideoItem } from "./video-item.interface";
+
+import cn from 'classnames';
 dayjs.extend(relativeTime);
  
 const VideoItem:FC<IVideoItem>=({item,isLarge,isAvatar, tag})=>{
@@ -31,7 +33,7 @@ const VideoItem:FC<IVideoItem>=({item,isLarge,isAvatar, tag})=>{
                         )}
                         
                     </div>
-                    <div className={styles.author}>{item.user?.name}</div>
+                    <div className={cn('author',{verified:item.user?.isVerified})}>{item.user?.name}</div>
                     <div className={styles.name}>{item.name}</div>
                 </a>
             </Link>

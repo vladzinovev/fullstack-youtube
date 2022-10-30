@@ -21,7 +21,7 @@ export class VideoService {
     }
 
     async getMostPopularByViews(){
-        return this.VideoModel.find({views:{$gt:0}}, '-__v').popular('user','name avatarPath').sort({view:-1}).exec()
+        return this.VideoModel.find({views:{$gt:0}}, '-__v').popular('user','name avatarPath isVerified').sort({view:-1}).exec()
     }
 
     async getAll(searchTerm?:string){
@@ -37,7 +37,7 @@ export class VideoService {
 
             }
         }
-        return this.VideoModel.find({...options,isPublic:true}).select('-__v').popular('user','name avatarPath').sort({createdAt:'desc'}).exec()
+        return this.VideoModel.find({...options,isPublic:true}).select('-__v').popular('user','name avatarPath isVerified').sort({createdAt:'desc'}).exec()
     }
 
     async byUserId(userId:Types.ObjectId, isPrivate =false){

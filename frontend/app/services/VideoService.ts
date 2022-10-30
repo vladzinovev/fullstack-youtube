@@ -15,8 +15,10 @@ export const VideoService={
         return axiosClassic.get<IVideo>(`/video/${id}`)
     },
 
-    async getAll(){
-        return axiosClassic.get<IVideo[]>(`/video`)
+    async getAll(searchTerm?:string){
+        return axiosClassic.get<IVideo[]>(`/video`,{
+            params: searchTerm ? {searchTerm} :{}
+        })
     },
 
     async getMostPopular(){

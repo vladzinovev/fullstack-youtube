@@ -174,37 +174,6 @@ img{
 			padding: 15px 25px;
 			position: relative;
 			border-bottom: 1px solid $light_gray;
-			.search_top{
-				max-width: 400px;
-				margin: 0 auto;
-				>label{
-					position: relative;
-					display: block;
-					input{
-						border-radius: 30px;
-						padding: 8px 15px;
-						border: 1px solid $light_gray;
-						width: 100%;
-						display: block;
-						transition: box-shadow .4s ease;
-						&::placeholder{
-							color: $gray;
-							opacity: .8;
-							font-style: italic;
-						}
-						&:focus{
-							box-shadow: 0 3px 6px rgba(0,0,0, .04);
-						}
-					}
-					img{
-						position: absolute;
-						right: 15px;
-						top: 8px;
-						max-width: 15px;
-					}
-				}
-			}
-			
 		}
 		#wrapper_content{
 			display: -webkit-flex;
@@ -321,25 +290,21 @@ img{
 					.info_left{
 						display: flex;
 						align-items: center;
-						>a>span{
+						>a{
+							display: flex;
+							justify-content: center;
+							align-items: center;
 							margin-right: 15px;
-							border-radius: 50%;
+							>span{
+								margin-right: 15px;
+								border-radius: 50%;
+							}
 						}
 						>.info{
 							>.name{
 								position: relative;
 								font-weight: 500;
-								&::after{
-									content: '';
-									width: 10px;
-									height: 10px;
-									background-image: url('../../../public/img/common/correct.svg');
-									background-position: center;
-									background-repeat: no-repeat;
-									margin-left: 15px;
-									display: inline-block;
-									background-size: cover;
-								}
+								
 							}
 							>.subs{
 								color: $gray;
@@ -358,4 +323,15 @@ img{
 	}		
 				
 }			
+.verified::after{
+	content: '';
+	width: 10px;
+	height: 10px;
+	background-image: url('../../../public/img/common/correct.svg');
+	background-position: center;
+	background-repeat: no-repeat;
+	margin-left: 15px;
+	display: inline-block;
+	background-size: cover;
+}
             

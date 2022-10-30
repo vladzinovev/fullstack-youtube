@@ -6,12 +6,7 @@ import IconsRight from "./icons/IconsRight";
 const Header:FC=()=>{
     return (
         <header id="header">
-            <div className="search_top">
-                <label>
-                    <input type="text" placeholder="Search videos, stars or authors..."/>
-                    <img src="img/common/search.svg" alt=""/>
-                </label>
-            </div>
+            <Search/>
             <IconsRight/>
         </header>
     )

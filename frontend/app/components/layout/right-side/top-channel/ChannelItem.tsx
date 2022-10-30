@@ -3,6 +3,7 @@ import Image from "next/image";
 import { FC } from "react"
 import { IUser } from "types/user.interface";
 import { formatNumberToK } from "utils/formatNumberToK";
+import cn from 'classnames';
 
 const ChannelItem:FC<{item:IUser}>=({item})=>{
     return (
@@ -14,7 +15,7 @@ const ChannelItem:FC<{item:IUser}>=({item})=>{
                     </a>
                 </Link>
                 <div className="info">
-                    <div className="name">{item.name}</div>
+                    <div className={cn('name',{verified:item.isVerified})}>{item.name}</div>
                     <div className="subs">{formatNumberToK(item.subscribersCount)} Subscribers</div>
                 </div>
             </div>
