@@ -4,8 +4,7 @@ const MostPopularVideo:FC=()=>{
     return (
         <div id="live">
             <div className="title_gray">
-                <h2>Live</h2>
-                <div className="showmore">Show More</div>
+                <h2>top video</h2>
             </div>
             <div className="video_item video_live_item">
                 <div className="thumbnail">

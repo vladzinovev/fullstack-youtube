@@ -9,10 +9,6 @@ export const menu:IMenuItem[]=[{
     image:'img/common/video-camera.svg',
     link:'/videos'
 },{
-    title:'Premium Contents',
-    image:'img/common/gift.svg',
-    link:'/videos'
-},{
     title:'Live',
     image:'img/common/live-news.svg',
     link:'/videos'

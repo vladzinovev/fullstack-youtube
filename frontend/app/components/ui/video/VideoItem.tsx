@@ -25,7 +25,7 @@ const VideoItem:FC<IVideoItem>=({item,isLarge,isAvatar})=>{
                         <VideoDuration videoPath={item.videoPath} />
                         {isAvatar && (
                             <div className={styles.avatar}>
-                                <Image width={36} height={36} alt={item.user?.name} src={item.user?.avatarPath || ''}/>
+                                <Image width={50} height={50} alt={item.user?.name} src={item.user?.avatarPath || ''}/>
                             </div>
                         )}
                         

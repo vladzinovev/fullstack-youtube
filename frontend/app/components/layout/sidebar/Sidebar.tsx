@@ -17,12 +17,14 @@ const Sidebar:FC=()=>{
 
     return user ? (
         <section className="sidebar">
-				<Link href="/" className="logo" rel="noreferrer">
-                    <img src={logoImg.src} alt="Youtube"/>
-                </Link>
-				<ProfileInfo/>
-				<Line/>
-				<Menu/>
+			<Link href="/">
+				<a className="logo" rel="noreferrer">
+					<Image src='http://localhost:3000/img/common/logo.png' alt="Youtube" width={169} height={55}/>
+                </a>
+			</Link>
+			<ProfileInfo/>
+			<Line/>
+			<Menu/>
 
 			{/* 	<div className="switch_wrapper">
 					<label className="switch">
