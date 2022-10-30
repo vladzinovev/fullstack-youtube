@@ -10,7 +10,7 @@ const RightSide:FC<{topVideo:IVideo, topChannels:IUser[]}>=(props)=>{
         <div className="right_side">
             <MostPopularVideo video={props.topVideo} />
             <Line/>
-            <TopChannels/>
+            <TopChannels channels={props.topChannels}/>
         </div>
     )
 }

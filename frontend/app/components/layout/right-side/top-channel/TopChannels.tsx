@@ -1,73 +1,19 @@
 import { FC } from "react";
+import { IUser } from "types/user.interface";
+import ChannelItem from "./ChannelItem";
 
-const TopChannels:FC=()=>{
+const TopChannels:FC<{channels:IUser[]}>=({channels})=>{
     return (
         <div id="top_channels">							
             <div className="title_gray">
                 <h2>Top Channels</h2>
-                <div className="showmore">Show More</div>
             </div>
             <div className="list_channels">
-                <div className="channel">
-                    <div className="info_left">
-                        <img src="img/main/avatar.jpg" alt=""/>
-                        <div className="info">
-                            <div className="name">LEGO</div>
-                            <div className="subs">6.2M Subscribers</div>
-                        </div>
-                    </div>
-                    <a href="#" className="mnu"><img src="img/common/open-menu.svg" alt=""/></a>
-                </div>
-                <div className="channel">
-                    <div className="info_left">
-                        <img src="img/main/avatar.jpg" alt=""/>
-                        <div className="info">
-                            <div className="name">LEGO</div>
-                            <div className="subs">6.2M Subscribers</div>
-                        </div>
-                    </div>
-                    <a href="#" className="mnu"><img src="img/common/open-menu.svg" alt=""/></a>
-                </div>
-                <div className="channel">
-                    <div className="info_left">
-                        <img src="img/main/avatar.jpg" alt=""/>
-                        <div className="info">
-                            <div className="name">LEGO</div>
-                            <div className="subs">6.2M Subscribers</div>
-                        </div>
-                    </div>
-                    <a href="#" className="mnu"><img src="img/common/open-menu.svg" alt=""/></a>
-                </div>
-                <div className="channel">
-                    <div className="info_left">
-                        <img src="img/main/avatar.jpg" alt=""/>
-                        <div className="info">
-                            <div className="name">LEGO</div>
-                            <div className="subs">6.2M Subscribers</div>
-                        </div>
-                    </div>
-                    <a href="#" className="mnu"><img src="img/common/open-menu.svg" alt=""/></a>
-                </div>
-                <div className="channel">
-                    <div className="info_left">
-                        <img src="img/main/avatar.jpg" alt=""/>
-                        <div className="info">
-                            <div className="name">LEGO</div>
-                            <div className="subs">6.2M Subscribers</div>
-                        </div>
-                    </div>
-                    <a href="#" className="mnu"><img src="img/common/open-menu.svg" alt=""/></a>
-                </div>
-                <div className="channel">
-                    <div className="info_left">
-                        <img src="img/main/avatar.jpg" alt=""/>
-                        <div className="info">
-                            <div className="name">LEGO</div>
-                            <div className="subs">6.2M Subscribers</div>
-                        </div>
-                    </div>
-                    <a href="#" className="mnu"><img src="img/common/open-menu.svg" alt=""/></a>
-                </div>
+                {channels.map(channel=>(
+                    <ChannelItem item={channel} key={channel._id}/>
+                ))}
+                
+                
             </div>
         </div>
         

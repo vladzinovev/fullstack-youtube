@@ -321,10 +321,8 @@ img{
 					.info_left{
 						display: flex;
 						align-items: center;
-						>img{
+						>a>span{
 							margin-right: 15px;
-							width: 35px;
-							height: 35px;
 							border-radius: 50%;
 						}
 						>.info{
