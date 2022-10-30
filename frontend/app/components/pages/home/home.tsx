@@ -12,10 +12,9 @@ import Recommended from "./recommended/Recommended";
 import WeeklyFeatured from "./weekly-featured/WeeklyFeatured";
 
 
-const Home:FC<IHome>=({weeklyVideos,randomVideo, newVideos})=>{
+const Home:FC<IHome>=({weeklyVideos,randomVideo, newVideos, topVideo, topChannels})=>{
 
     const {user}=useAuth();
-    console.log(weeklyVideos);
 
     return (
         <Layout title="Youtube 2.0">
@@ -27,7 +26,7 @@ const Home:FC<IHome>=({weeklyVideos,randomVideo, newVideos})=>{
                         <Recommended newVideos={newVideos}/>
 						
 					</div>
-					<RightSide/>
+					<RightSide topVideo={topVideo} topChannels={topChannels}/>
 				</div>
         </Layout>
     )

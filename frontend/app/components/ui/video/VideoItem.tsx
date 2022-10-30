@@ -10,7 +10,7 @@ import Link from "next/link";
 import { IVideoItem } from "./video-item.interface";
 dayjs.extend(relativeTime);
  
-const VideoItem:FC<IVideoItem>=({item,isLarge,isAvatar})=>{
+const VideoItem:FC<IVideoItem>=({item,isLarge,isAvatar, tag})=>{
 
     
     
@@ -23,6 +23,7 @@ const VideoItem:FC<IVideoItem>=({item,isLarge,isAvatar})=>{
                         <Image src={item.thumbnailPath} alt={item.name} width={185} height={103} layout='responsive'/>
                         {/* <time>{dayjs(new Date(item.createdAt)).format('LT')}</time> */}
                         <VideoDuration videoPath={item.videoPath} />
+                        {tag && <div className={styles.hot}>{tag}</div>}
                         {isAvatar && (
                             <div className={styles.avatar}>
                                 <Image width={50} height={50} alt={item.user?.name} src={item.user?.avatarPath || ''}/>

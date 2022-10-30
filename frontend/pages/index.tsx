@@ -1,4 +1,5 @@
 import { IHome } from '@/components/pages/home/home.interface';
+import { UserService } from '@/services/UserService';
 import { VideoService } from '@/services/VideoService';
 import { shuffle } from 'lodash';
 import type { GetStaticProps,NextPage } from 'next';
@@ -12,8 +13,8 @@ export const getStaticProps:GetStaticProps=async()=>{
   try{
 
     const {data :newVideos} = await VideoService.getAll();
-    const topVideo={};
-    const topChannels:never[]=[]; 
+    const topVideo=await VideoService.getMostPopular().then(({data})=>data[0]);
+    const topChannels=await UserService.getMostPopular().then(({data})=>data); 
 
     //weekly featured & new videos & random video
     //top-video

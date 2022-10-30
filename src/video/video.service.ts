@@ -21,7 +21,7 @@ export class VideoService {
     }
 
     async getMostPopularByViews(){
-        return this.VideoModel.find({views:{$gt:0}}, '-__v').sort({view:-1}).exec()
+        return this.VideoModel.find({views:{$gt:0}}, '-__v').popular('user','name avatarPath').sort({view:-1}).exec()
     }
 
     async getAll(searchTerm?:string){
