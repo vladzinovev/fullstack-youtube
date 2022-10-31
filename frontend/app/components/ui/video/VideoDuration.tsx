@@ -1,8 +1,16 @@
-import { FC, useRef } from "react"
+import { FC, useEffect, useRef, useState } from "react"
 
 const VideoDuration:FC<{videoPath:string}>=({videoPath})=>{
     const ref=useRef<HTMLVideoElement>(null);
     const duration = ref.current?.duration || 0;
+
+    /*const [duration, setDuration]=useState(0);
+
+    useEffect(()=>{
+        const video=ref.current
+        if(video) setDuration(video?.duration)
+    },[ref.current?.duration]) */
+
     return (
         <>
             <video className="hidden" ref={ref}>
