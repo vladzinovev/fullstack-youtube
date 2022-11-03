@@ -1,5 +1,5 @@
 import { FC, forwardRef } from "react";
-import { IInput } from "./Field.interface";
+import {IInput} from "./Field.interface";
 import cn from 'classnames';
 import styles from './Field.module.scss';
 
