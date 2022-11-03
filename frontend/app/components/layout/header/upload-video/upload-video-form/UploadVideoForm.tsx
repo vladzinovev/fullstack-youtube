@@ -3,6 +3,7 @@ import Field from "@/components/ui/Field/Field";
 import { FC } from "react";
 import { SubmitHandler, useForm , Controller} from "react-hook-form";
 import { IVideoDto } from "types/video.interface";
+import FooterForm from "./footer-form/FooterForm";
 import TooglePublic from "./toogle-public/TooglePublic";
 
 const UploadVideoForm:FC=()=>{
@@ -33,9 +34,7 @@ const UploadVideoForm:FC=()=>{
             name='isPublic' 
             render={({field})=><TooglePublic clickHandler={() => { field.onChange(!field.value); } } isEnabled={!!field.value}/>}/>
 
-        <div className={'mt-5 mb-1 text-center'}>
-            <Button>Save</Button>
-        </div>
+        <FooterForm/>
         </form>
     )
 }
