@@ -1,7 +1,7 @@
 import Button from "@/components/ui/Button/Button";
 import Field from "@/components/ui/Field/Field";
 import { FC } from "react";
-import { SubmitHandler, useForm } from "react-hook-form";
+import { SubmitHandler, useForm , Controller} from "react-hook-form";
 import { IVideoDto } from "types/video.interface";
 import TooglePublic from "./toogle-public/TooglePublic";
 
@@ -28,7 +28,11 @@ const UploadVideoForm:FC=()=>{
             })}
             placeholder='Description' error={errors.description} 
         />
-        <TooglePublic/>
+        <Controller 
+            control={control} 
+            name='isPublic' 
+            render={({field})=><TooglePublic clickHandler={() => { field.onChange(!field.value); } } isEnabled={!!field.value}/>}/>
+
         <div className={'mt-5 mb-1 text-center'}>
             <Button>Save</Button>
         </div>
