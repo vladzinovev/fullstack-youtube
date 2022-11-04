@@ -10,7 +10,7 @@ import VideoInformation from "./video-information/VideoInformation";
 import styles from '../UploadVideo.module.scss';
 import { IMediaResponse } from "@/services/MediaService";
 
-const UploadVideoForm:FC=()=>{
+const UploadVideoForm:FC<{videoId:string}>=({videoId})=>{
     const {register, formState:{errors}, control, handleSubmit,watch,setValue}=useForm<IVideoDto>({
         mode:'onChange'
     })
@@ -50,7 +50,7 @@ const UploadVideoForm:FC=()=>{
                     />
                     </div>
                     <div className={'w-5/12 p-3'}>
-                        <VideoInformation videoId={'wefwe4fggwe'} fileName={videoFileName}/>
+                        <VideoInformation videoId={videoId} fileName={videoFileName}/>
                     </div>
                     <FooterForm/>
                 </> 

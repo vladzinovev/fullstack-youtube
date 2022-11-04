@@ -1,4 +1,5 @@
-import axios from "axios"
+import axios from "../api/interceptors"
+
 
 export interface IMediaResponse{
     name:string

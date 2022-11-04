@@ -17,7 +17,7 @@ const VideoInformation:FC<IVideoInformation>=({thumbnailPath,videoId,fileName})=
                     <span>Video Link</span>
                     <span>
                         <Link href={`/v/${videoId}`}>
-                            <a>https://localhost.com/v/${videoId}</a>
+                            <a>https://localhost.com/v/{videoId}</a>
                         </Link>
                     </span>
                 </div>
