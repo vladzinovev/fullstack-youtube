@@ -19,12 +19,15 @@ const UploadVideoForm:FC<{videoId:string}>=({videoId})=>{
         console.log(data);
     }
     const videoPath=watch('videoPath');
+    const thumbnailPath=watch('thumbnailPath');
     const [videoFileName, setVideoFileName]=useState('');
     const handleUploadVideo=(value:IMediaResponse)=>{
         setValue('videoPath',value.url)
         setValue('name',value.name)
         setVideoFileName(value.name)
     }
+
+    const [isChosen, setIsChosen]=useState(false);
 
     const [percent, setPercent]=useState(0);
     const [isUploaded, setIsUploaded]=useState(false);
@@ -37,7 +40,7 @@ const UploadVideoForm:FC<{videoId:string}>=({videoId})=>{
 
     return (
         <form onSubmit={handleSubmit(onSubmit)} className='flex flex-wrap'>
-            {!!videoPath ? (
+            {isChosen ? (
                 <>
                     <div className={'w-7/12 pr-12'}>
                     <Field 
@@ -52,6 +55,17 @@ const UploadVideoForm:FC<{videoId:string}>=({videoId})=>{
                         })}
                         placeholder='Description' error={errors.description} 
                     />
+                    <div className="mt-8">
+                        <Controller 
+                            control={control} 
+                            name='thumbnailPath' 
+                            render={({field:{onChange}})=> <UploadField 
+                                folder='thumbnails' 
+                                onChange={(value:IMediaResponse)=>{onChange(value.url)}}
+                            />}
+                        />
+                    </div>
+                    
                     <Controller 
                         control={control} 
                         name='isPublic' 
@@ -59,7 +73,7 @@ const UploadVideoForm:FC<{videoId:string}>=({videoId})=>{
                     />
                     </div>
                     <div className={'w-5/12 p-3'}>
-                        <VideoInformation videoId={videoId} fileName={videoFileName} isUploaded={isUploaded}/>
+                        <VideoInformation videoId={videoId} fileName={videoFileName} isUploaded={isUploaded} thumbnailPath={thumbnailPath}/>
                     </div>
                     <FooterForm percent={percent} isUploaded={isUploaded}/>
                 </> 
@@ -68,7 +82,13 @@ const UploadVideoForm:FC<{videoId:string}>=({videoId})=>{
                     <Controller 
                         control={control} 
                         name='videoPath' 
-                        render={()=><UploadField title={'Сначала, загрузите видео'}folder='videos' onChange={handleUploadVideo} setValue={setProgressPercentage}/>}
+                        render={()=> <UploadField 
+                            title={'Сначала, загрузите видео'} 
+                            folder='videos' 
+                            onChange={handleUploadVideo} 
+                            setValue={setProgressPercentage} 
+                            setIsChosen={setIsChosen}
+                        />}
                     />
                 </div>
             )
