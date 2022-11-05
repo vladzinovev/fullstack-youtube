@@ -2,8 +2,8 @@ import { MediaService } from "@/services/MediaService";
 import { ChangeEvent } from "react";
 import {useMutation} from 'react-query'
 
-export const useUploadFile=(onChange:(...event:any)=>void, folder?:string)=>{
-    const {mutateAsync} = useMutation('upload file',(data:FormData)=>MediaService.upload(data,folder),{
+export const useUploadFile=(onChange:(...event:any)=>void, folder?:string,setValue?:(val:number)=>void)=>{
+    const {mutateAsync} = useMutation('upload file',(data:FormData)=>MediaService.upload(data,folder,setValue),{
         onSuccess:({data})=>{
             onChange(data)
         },

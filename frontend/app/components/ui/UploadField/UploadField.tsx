@@ -1,8 +1,10 @@
 import { FC } from "react"
 import { IUploadField } from "./upload-field.interface";
 import styles from './UploadField.module.scss';
+import { useUploadFile } from "./useUploadFile";
 
-const UploadField:FC<IUploadField>=({title})=>{
+const UploadField:FC<IUploadField>=({title, onChange, folder,setValue})=>{
+    const {uploadFile}=useUploadFile(onChange, folder,setValue)
     return(
         <div className={styles.file}>
             {title && <h1>{title}</h1>}

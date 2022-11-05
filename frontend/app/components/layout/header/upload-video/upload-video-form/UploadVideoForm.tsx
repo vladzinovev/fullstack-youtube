@@ -26,6 +26,15 @@ const UploadVideoForm:FC<{videoId:string}>=({videoId})=>{
         setVideoFileName(value.name)
     }
 
+    const [percent, setPercent]=useState(0);
+    const [isUploaded, setIsUploaded]=useState(false);
+    const setProgressPercentage= (val:number)=>{
+        setPercent(val);
+        if(val===100){
+            setIsUploaded(true);
+        }
+    }
+
     return (
         <form onSubmit={handleSubmit(onSubmit)} className='flex flex-wrap'>
             {!!videoPath ? (
@@ -50,16 +59,16 @@ const UploadVideoForm:FC<{videoId:string}>=({videoId})=>{
                     />
                     </div>
                     <div className={'w-5/12 p-3'}>
-                        <VideoInformation videoId={videoId} fileName={videoFileName}/>
+                        <VideoInformation videoId={videoId} fileName={videoFileName} isUploaded={isUploaded}/>
                     </div>
-                    <FooterForm/>
+                    <FooterForm percent={percent} isUploaded={isUploaded}/>
                 </> 
             ) : (
                 <div className={styles.uploadScreen}>
                     <Controller 
                         control={control} 
                         name='videoPath' 
-                        render={()=><UploadField title={'Сначала, загрузите видео'}folder='videos' onChange={handleUploadVideo}/>}
+                        render={()=><UploadField title={'Сначала, загрузите видео'}folder='videos' onChange={handleUploadVideo} setValue={setProgressPercentage}/>}
                     />
                 </div>
             )

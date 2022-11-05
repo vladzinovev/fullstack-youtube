@@ -6,14 +6,14 @@ import cn from 'classnames';
 
 const isUploaded=true;
 
-const FooterForm:FC=()=>{
+const FooterForm:FC<{percent:number,isUploaded:boolean}>=({percent,isUploaded})=>{
     return(
         <div className={styles.footer}>
             <div className={cn({[styles['icons-uploaded']]:isUploaded})}>
                 <MdUpload className={styles['upload-icon']}/>
                 <MdCheckCircle className={styles['check-icon']}/>
                 <span>
-                    {isUploaded? 'Video is uploaded': 'Uploading 48%...'}
+                    {isUploaded? 'Video is uploaded': `Uploading ${percent}%...`}
                 </span>
             </div>
             <div>

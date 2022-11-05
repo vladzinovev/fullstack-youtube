@@ -1,5 +1,6 @@
 export interface IUploadField{
     title?:string,
     onChange:(...event:any)=>void,
-    folder?:string
+    folder?:string,
+    setValue?:(val:number)=>void
 }
