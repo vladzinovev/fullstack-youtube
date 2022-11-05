@@ -9,9 +9,10 @@ import { Dialog, Transition } from '@headlessui/react'
 
 
 const UploadModal:FC<IUploadModal>=({setIsOpen, isOpen,videoId})=>{
+    const handleCloseModal=()=>setIsOpen(false)
     return(
         <Transition show={isOpen} as={Fragment}>
-            <Dialog onClose={() => setIsOpen(false)} className={styles.modal}>
+            <Dialog onClose={handleCloseModal} className={styles.modal}>
                 <Transition.Child
                     as={Fragment}
                     enter="ease-out duration-300"
@@ -37,7 +38,7 @@ const UploadModal:FC<IUploadModal>=({setIsOpen, isOpen,videoId})=>{
                             leaveTo="opacity-0"
                         >   
                             <Dialog.Panel className={styles.window}>
-                                <UploadVideoForm/>
+                                <UploadVideoForm videoId={videoId} handleCloseModal={handleCloseModal}/>
                             </Dialog.Panel>
                         </Transition.Child>
                         

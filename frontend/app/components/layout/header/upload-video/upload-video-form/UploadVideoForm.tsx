@@ -9,55 +9,36 @@ import TooglePublic from "./toogle-public/TooglePublic";
 import VideoInformation from "./video-information/VideoInformation";
 import styles from '../UploadVideo.module.scss';
 import { IMediaResponse } from "@/services/MediaService";
+import { useMutation } from "react-query";
+import { VideoService } from "@/services/VideoService";
+import SuccessMessage from "./SuccessMessage";
+import { useUploadVideoForm } from "./useUploadVideoForm";
 
-const UploadVideoForm:FC<{videoId:string}>=({videoId})=>{
-    const {register, formState:{errors}, control, handleSubmit,watch,setValue}=useForm<IVideoDto>({
-        mode:'onChange'
-    })
+const UploadVideoForm:FC<{videoId:string,handleCloseModal:()=>void}>=({videoId,handleCloseModal})=>{
     
-    const onSubmit:SubmitHandler<IVideoDto>=(data)=>{
-        console.log(data);
-    }
-    const videoPath=watch('videoPath');
-    const thumbnailPath=watch('thumbnailPath');
-    const [videoFileName, setVideoFileName]=useState('');
-    const handleUploadVideo=(value:IMediaResponse)=>{
-        setValue('videoPath',value.url)
-        setValue('name',value.name)
-        setVideoFileName(value.name)
-    }
-
-    const [isChosen, setIsChosen]=useState(false);
-
-    const [percent, setPercent]=useState(0);
-    const [isUploaded, setIsUploaded]=useState(false);
-    const setProgressPercentage= (val:number)=>{
-        setPercent(val);
-        if(val===100){
-            setIsUploaded(true);
-        }
-    }
+    const {form,status,media}=useUploadVideoForm({videoId,handleCloseModal})
 
     return (
-        <form onSubmit={handleSubmit(onSubmit)} className='flex flex-wrap'>
-            {isChosen ? (
+        <form onSubmit={form.handleSubmit(form.onSubmit)} className='flex flex-wrap'>
+            { status.isSuccess && <SuccessMessage/>}
+            {status.isChosen ? (
                 <>
                     <div className={'w-7/12 pr-12'}>
                     <Field 
-                        {...register('name',{
+                        {...form.register('name',{
                                 required:'Name is required',
                         })}
-                        placeholder='Name' error={errors.name}
+                        placeholder='Name' error={form.errors.name}
                     />
                     <TextArea 
-                        {...register('description',{
+                        {...form.register('description',{
                                 required:'Description is required',
                         })}
-                        placeholder='Description' error={errors.description} 
+                        placeholder='Description' error={form.errors.description} 
                     />
                     <div className="mt-8">
                         <Controller 
-                            control={control} 
+                            control={form.control} 
                             name='thumbnailPath' 
                             render={({field:{onChange}})=> <UploadField 
                                 folder='thumbnails' 
@@ -67,27 +48,27 @@ const UploadVideoForm:FC<{videoId:string}>=({videoId})=>{
                     </div>
                     
                     <Controller 
-                        control={control} 
+                        control={form.control} 
                         name='isPublic' 
                         render={({field})=><TooglePublic clickHandler={() => { field.onChange(!field.value); } } isEnabled={!!field.value}/>}
                     />
                     </div>
                     <div className={'w-5/12 p-3'}>
-                        <VideoInformation videoId={videoId} fileName={videoFileName} isUploaded={isUploaded} thumbnailPath={thumbnailPath}/>
+                        <VideoInformation videoId={videoId} fileName={media.videoFileName} isUploaded={status.isUploaded} thumbnailPath={media.thumbnailPath}/>
                     </div>
-                    <FooterForm percent={percent} isUploaded={isUploaded}/>
+                    <FooterForm percent={status.percent} isUploaded={status.isUploaded}/>
                 </> 
             ) : (
                 <div className={styles.uploadScreen}>
                     <Controller 
-                        control={control} 
+                        control={form.control} 
                         name='videoPath' 
                         render={()=> <UploadField 
                             title={'Сначала, загрузите видео'} 
                             folder='videos' 
-                            onChange={handleUploadVideo} 
-                            setValue={setProgressPercentage} 
-                            setIsChosen={setIsChosen}
+                            onChange={media.handleUploadVideo} 
+                            setValue={status.setProgressPercentage} 
+                            setIsChosen={status.setIsChosen}
                         />}
                     />
                 </div>
