@@ -8,8 +8,8 @@ import styles from './VideoItem.module.scss';
 import relativeTime from 'dayjs/plugin/relativeTime';
 import Link from "next/link";
 import { IVideoItem } from "./video-item.interface";
-
 import cn from 'classnames';
+import VideoStatistics from "./VideoStatistics/VideoStatistics";
 dayjs.extend(relativeTime);
  
 const VideoItem:FC<IVideoItem>=({item,isLarge,isAvatar, tag})=>{
@@ -43,15 +43,7 @@ const VideoItem:FC<IVideoItem>=({item,isLarge,isAvatar, tag})=>{
                     VIEWS{formatNumberToK(item.views)}
                 </div>}
 
-            <div className={styles.number_info}>
-                <div className={styles.views}>VIEWS {formatNumberToK(item.views)}</div>
-
-                {isLarge && <div className={styles.likes}>
-                    LIKES{formatNumberToK(item.likes)}
-                </div>}
-
-                <div className={styles.date}>{dayjs(new Date(item.createdAt)).fromNow()}</div>
-            </div>
+            <VideoStatistics views={item.views} likes={isLarge ? item.likes : undefined} createdAt={item.createdAt}/>
         </div>
         
         

@@ -10,7 +10,7 @@ import { IUser } from 'types/user.interface';
 import { IVideo } from 'types/video.interface';
 
 const ChannelPage: NextPage<IHome> = (props) => {
-  return <Channel {...props}/>
+  return <Channel channel={undefined} videos={[]} {...props}/>
 }
 
 // eslint-disable-next-line @next/next/no-typos
@@ -35,7 +35,7 @@ export const GetStaticPaths: GetStaticPaths=async()=>{
     }
 }
 
-export const getStaticProps:GetStaticProps=async()=>{
+export const getStaticProps:GetStaticProps=async({params})=>{
   try{
     const userId=String(params?.id)
     const {data :videos} = await VideoService.getVideosByUser(userId);
@@ -44,7 +44,8 @@ export const getStaticProps:GetStaticProps=async()=>{
     return{
       props:{
         channel,
-        videos
+        videos,
+        randomVideo:shuffle(videos)[0]
       } as IChannel,
       revalidate:60
     }
@@ -52,7 +53,8 @@ export const getStaticProps:GetStaticProps=async()=>{
     return{
       props:{
         channel:{} as IUser,
-        videos:[]
+        videos:[],
+        randomVideo:{} as IVideo,
       } as IChannel
     }
   }

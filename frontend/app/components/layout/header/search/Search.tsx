@@ -9,7 +9,7 @@ const Search:FC=()=>{
         <div className={styles.search_top}>
             <label>
                 <input type="text" placeholder="Search videos..." value={searchTerm} onChange={handleSearch}/>
-                <img src="img/common/search.svg" alt=""/>
+                <img src="http://localhost:3000/img/common/search.svg" alt=""/>
             </label>
             {isSuccess && 
                 <div className="styles.result">

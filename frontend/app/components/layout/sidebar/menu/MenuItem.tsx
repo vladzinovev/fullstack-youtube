@@ -8,7 +8,7 @@ const MenuItem:FC<{item:IMenuItem}>=({item})=>{
         <li>
             <Link href={item.link}>
             <a>
-                <img src={item.image} alt={item.title}/>
+                <img src={`http://localhost:3000/${item.image}`} alt={item.title}/>
                 <b>{item.title}</b>
             </a>
             </Link>

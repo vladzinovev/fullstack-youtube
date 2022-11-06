@@ -44,7 +44,7 @@ export class VideoService {
         const userIdCheck={user:userId};
         const options = isPrivate? userIdCheck:{...userIdCheck, isPublic:true};
 
-        return this.VideoModel.find(options, '-__v').sort({createdAt:'desc'}).exec()
+        return this.VideoModel.find(options, '-__v').popular('user','name avatarPath isVerified').sort({createdAt:'desc'}).exec()
     }
 
     async create(userId:Types.ObjectId){

@@ -19,7 +19,7 @@ const ProfileInfo=()=>{
     <Loader count={5}/>
     ):(
         <>
-        `<div className={styles.profile_info}>
+        <div className={styles.profile_info}>
             {/* <img src={avatarImg.src} alt="" width={70} height={70}/> */}
             <Image src={data?.avatarPath || ''} alt="" width={120} height={120} quality={90}/>
             {/* <div className="name">Nannie Nelson</div> */}

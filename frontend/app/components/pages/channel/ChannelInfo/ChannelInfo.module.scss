@@ -1,0 +1,29 @@
+@import '../../../../assets/styles/_variables.scss';
+
+.profile_info{
+    @apply flex flex-wrap items-center;
+    text-align: center;
+    
+    >span{
+        @apply rounded-full
+        display: block;
+        border-radius: 50%;
+        margin: 0 auto 7px;
+    }
+    > div{
+        @apply ml-4;
+        >.name{
+            @apply mb-2 font-bold text-3xl
+        }
+            
+        >.location{
+            @apply text-base text-left
+            color: $gray;
+        } 
+    }
+      
+}
+.article{
+    @apply my-4 text-base;
+    color: $gray;
+}

@@ -238,28 +238,28 @@ img{
 		cursor: pointer;}
 }
 
-#wrapper_content{
-	>.left_side{
-		#recommended{
-			>.top_block{
-				display: flex;
-				align-items: center;
-				justify-content: space-between;
-				margin-bottom: 25px;
-				>.sort{
-					font-size: 12px;
-					font-weight: 500;}}
-			>.catalog{
-				display: flex;
-				flex-wrap: wrap;
-				gap:20px;
-				>div{
-					flex:1 1 calc((100%/4)-2rem);
-					width: 23%;
-					margin-bottom: 10px;}
-			}
-		}
+#recommended{
+	>.top_block{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-bottom: 25px;
+		>.sort{
+			font-size: 12px;
+			font-weight: 500;}}
+	>.catalog{
+		display: flex;
+		flex-wrap: wrap;
+		gap:20px;
+		>div{
+			flex:1 1 calc((100%/4)-2rem);
+			width: 23%;
+			margin-bottom: 10px;}
 	}
+}
+
+#wrapper_content{
+	
 	>.right_side{
 		width: 25%;
 		padding: $gutter40;
