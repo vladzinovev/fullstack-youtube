@@ -1,6 +1,7 @@
 @import '../../../assets/styles/_variables.scss';
 .video_item{
     display: block;
+    position: relative;
 	> a{
         >.thumbnail{
             position: relative;

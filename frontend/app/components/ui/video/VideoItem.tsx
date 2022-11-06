@@ -10,15 +10,15 @@ import Link from "next/link";
 import { IVideoItem } from "./video-item.interface";
 import cn from 'classnames';
 import VideoStatistics from "./VideoStatistics/VideoStatistics";
+import { BiTrash } from "react-icons/bi";
 dayjs.extend(relativeTime);
  
-const VideoItem:FC<IVideoItem>=({item,isLarge,isAvatar, tag})=>{
+const VideoItem:FC<IVideoItem>=({item,isLarge,isAvatar, tag, removeHandler})=>{
 
-    
-    
     return (
         
         <div className={styles.video_item}>
+            {!!removeHandler && <button className={'absolute top-3 right-3'} onClick={()=> removeHandler(item._id)}> <BiTrash className='text-lg text-red-700'/></button>}
             <Link href={`/v/${item._id}`}>
                 <a className={"block"}>
                     <div className={styles.thumbnail}>

@@ -2,7 +2,7 @@ import VideoItem from "@/components/ui/video/VideoItem";
 import { FC } from "react";
 import { IVideo } from "types/video.interface";
 
-const Recommended:FC<{newVideos:IVideo[]}>=({newVideos})=>{
+const Recommended:FC<{newVideos:IVideo[], removeHandler?:(videoId:string)=>void}>=({newVideos,removeHandler})=>{
     return (
         <div id="recommended">
             <div className="top_block">
@@ -13,7 +13,7 @@ const Recommended:FC<{newVideos:IVideo[]}>=({newVideos})=>{
             </div>
             <div className="catalog">
             {newVideos.map((video)=>(
-                <VideoItem item={video} key={video._id} isAvatar/>
+                <VideoItem item={video} key={video._id} isAvatar removeHandler={removeHandler}/>
             ))}
             </div>
         </div>
