@@ -68,26 +68,28 @@
         margin-bottom: 20px;
     }
     
-	>.number_info{
-		display: -webkit-flex;
-		display: -moz-flex;
-		display: -ms-flex;
-		display: -o-flex;
-		display: flex;
-		align-items: center;
-		>div{
-			font-size: 12px;
-			font-weight: 600;
-			color: $gray;
-			text-transform: uppercase;
-			margin: 0 17px;
-			&:first-child{
-				margin-left: 0;
-			}
+	
+}
 
-            &.subscribers {
-                @apply text-primary
-            }
-		}
-	}
+.number_info{
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    align-items: center;
+    >div{
+        font-size: 12px;
+        font-weight: 600;
+        color: $gray;
+        text-transform: uppercase;
+        margin: 0 17px;
+        &:first-child{
+            margin-left: 0;
+        }
+
+        &.subscribers {
+            @apply text-primary
+        }
+    }
 }

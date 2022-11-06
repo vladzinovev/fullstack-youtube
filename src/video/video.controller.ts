@@ -78,8 +78,8 @@ export class VideoController {
   @HttpCode(200)
   @Put('update-likes/:videoId')
   @Auth()
-  async updateLikes(@Param('videoId',IdValidationPipe) videoId:string, @Query('type') type:'inc'|'dis'){
-    return this.videoService.updateReacton(videoId, type)
+  async updateLikes(@Param('videoId',IdValidationPipe) videoId:string){
+    return this.videoService.updateReacton(videoId)
   }
 
   

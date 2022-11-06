@@ -7,23 +7,30 @@ import { formatNumberToK } from "utils/formatNumberToK";
 import { BiLike } from "react-icons/bi";
 import styles from './VideoDetail.module.scss'
 import ChannelInfoShort from "@/components/ui/ChannelInfoShort/ChannelInfoShort";
+import { useMutation } from "react-query";
+import { CommentService } from "@/services/CommentService";
+import { ICommentDto } from "types/comment.interface";
+import { VideoService } from "@/services/VideoService";
 
 const VideoDetail:FC<{video:IVideo, channel:IUser}>=({video,channel})=>{
+    
+    const {mutateAsync, data}=useMutation('set like', (data:ICommentDto)=>VideoService.updateLikes(video._id))
+
     return(
-        <div>
-            <div>
-                <div>
+        <div className={styles.detail}>
+            <div className={styles.flex}>
+                <div className={styles.text}>
                     <h1>{video.name}</h1>
                     <VideoStatistics views={video.views} createdAt={video.createdAt} subscribers={channel.subscribersCount}/>
                 </div>
                 <div>
                     <button className={styles.likeButton}>
-                        <BiLike className={styles.likeIcon}/>
-                        <span>{formatNumberToK(video.likes)}</span>
+                        <BiLike className={styles.likeIcon} onClick={()=>mutateAsync}/>
+                        <span>{formatNumberToK(data?.data.likes || video.likes)}</span>
                     </button>
                 </div>
             </div>
-            <article>
+            <article  className={styles.article}>
                 {video.description}
             </article>
             <ChannelInfoShort channel={channel}/>

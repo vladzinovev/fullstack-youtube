@@ -83,11 +83,11 @@ export class VideoService {
         if(!updateVideo) throw new NotFoundException('Video not found')
         return updateVideo
     }
-    async updateReacton(_id:string, type:'inc'|'dis'){
-        if(!type) throw new BadRequestException('type query is invalid ')
+    async updateReacton(_id:string){
 
         const updateVideo = await this.VideoModel.findByIdAndUpdate(_id,{
-            $inc:{likes: type === 'inc' ? 1 : -1}   
+            /* $inc:{likes: type === 'inc' ? 1 : -1}   */ 
+            $inc:{likes:1}
         },{
             new:true
         }).exec()
