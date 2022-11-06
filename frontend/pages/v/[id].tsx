@@ -1,5 +1,5 @@
-import Channel from '@/components/pages/channel/Channel';
-import { IChannel } from '@/components/pages/channel/channel.interface';
+
+import { IChannel, IVideoPage } from '@/components/pages/video/video.interface';
 import { IHome } from '@/components/pages/home/home.interface';
 import { UserService } from '@/services/UserService';
 import { VideoService } from '@/services/VideoService';
@@ -8,18 +8,19 @@ import { shuffle } from 'lodash';
 import type { GetStaticPaths, GetStaticProps,NextPage } from 'next';
 import { IUser } from 'types/user.interface';
 import { IVideo } from 'types/video.interface';
+import Video from '@/components/pages/video/Video';
 
-const ChannelPage: NextPage<IHome> = (props) => {
-  return <Channel {...props}/>
+const VideoPage: NextPage<IVideoPage> = (props) => {
+  return <Video {...props}/>
 }
 
 // eslint-disable-next-line @next/next/no-typos
 export const GetStaticPaths: GetStaticPaths=async()=>{
     try{
-        const users=await UserService.getAll().then(({data})=>data)
-        const paths = users.map((user)=>({
+        const videos=await VideoService.getAll().then(({data})=>data)
+        const paths = videos.map((video)=>({
             params:{
-                id:user._id
+                id:video._id
             }
         }))
         return{
@@ -37,27 +38,22 @@ export const GetStaticPaths: GetStaticPaths=async()=>{
 
 export const getStaticProps:GetStaticProps=async({params})=>{
   try{
-    const userId=String(params?.id)
-    const {data :videos} = await VideoService.getVideosByUser(userId);
-    const channel=await UserService.getUser(userId).then(({data})=>data || ({} as IUser));
+    const videoId=String(params?.id)
+    const {data :video} = await VideoService.getVideoById(videoId);
 
     return{
       props:{
-        channel,
-        videos,
-        randomVideo:shuffle(videos)[0]
-      } as IChannel,
+        video
+      } as IVideoPage,
       revalidate:60
     }
   }catch(e){
     return{
       props:{
-        channel:{} as IUser,
-        videos:[],
-        randomVideo:{} as IVideo,
-      } as IChannel
+        video:{} as IVideo
+      } as IVideoPage
     }
   }
 }
 
-export default ChannelPage;
+export default VideoPage;

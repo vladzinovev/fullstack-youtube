@@ -14,14 +14,14 @@ export class VideoService {
 
     async byId(_id:Types.ObjectId, isPublic=true){
         //Check authUser===video.userId
-        const video=await this.VideoModel.findOne(isPublic?{_id, isPublic:true} :{_id},'-__v');
+        const video=await this.VideoModel.findOne(isPublic?{_id, isPublic:true} :{_id},'-__v').populate('user','name location avatarPath isVerified subscribersCount');
         if(!video) throw new UnauthorizedException('Video not found');
 
         return video;
     }
 
     async getMostPopularByViews(){
-        return this.VideoModel.find({views:{$gt:0}}, '-__v').popular('user','name avatarPath isVerified').sort({view:-1}).exec()
+        return this.VideoModel.find({views:{$gt:0}}, '-__v').populate('user','name avatarPath isVerified').sort({view:-1}).exec()
     }
 
     async getAll(searchTerm?:string){
@@ -37,14 +37,14 @@ export class VideoService {
 
             }
         }
-        return this.VideoModel.find({...options,isPublic:true}).select('-__v').popular('user','name avatarPath isVerified').sort({createdAt:'desc'}).exec()
+        return this.VideoModel.find({...options,isPublic:true}).select('-__v').populate('user','name avatarPath isVerified').sort({createdAt:'desc'}).exec()
     }
 
     async byUserId(userId:Types.ObjectId, isPrivate =false){
         const userIdCheck={user:userId};
         const options = isPrivate? userIdCheck:{...userIdCheck, isPublic:true};
 
-        return this.VideoModel.find(options, '-__v').popular('user','name avatarPath isVerified').sort({createdAt:'desc'}).exec()
+        return this.VideoModel.find(options, '-__v').populate('user','name avatarPath isVerified').sort({createdAt:'desc'}).exec()
     }
 
     async create(userId:Types.ObjectId){
