@@ -22,7 +22,7 @@ const VideoItem:FC<IVideoItem>=({item,isLarge,isAvatar, tag})=>{
             <Link href={`/v/${item._id}`}>
                 <a className={"block"}>
                     <div className={styles.thumbnail}>
-                        <Image src={item.thumbnailPath} alt={item.name} width={185} height={103} layout='responsive'/>
+                        {item.thumbnailPath && <Image src={item.thumbnailPath} alt={item.name} width={185} height={103} layout='responsive'/>}
                         {/* <time>{dayjs(new Date(item.createdAt)).format('LT')}</time> */}
                         <VideoDuration videoPath={item.videoPath} />
                         {tag && <div className={styles.hot}>{tag}</div>}
