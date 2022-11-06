@@ -11,6 +11,14 @@ export const UserService={
         return axiosClassic.get<IUser[]>('/user/most-popular')
     },
 
+    async getAll(){
+        return axiosClassic.get<IUser[]>('/user')
+    },
+
+    async getUser(id:string){
+        return axiosClassic.get<IUser>(`/user/by-id/${id}`)
+    },
+
     async updateProfile(body:IUserDto){
         return axios.put<IUser>('/user/profile',body)
     },

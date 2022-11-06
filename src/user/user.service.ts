@@ -62,4 +62,8 @@ export class UserService {
     async getMostPopular(){
         return this.UserModel.find({subscribersCount:{$gt:0}}, '-password -__v').sort({subscribersCount:-1}).exec()
     }
+
+    async getAll(){
+        return this.UserModel.find({}, '-password -__v').exec()
+    }
 }
