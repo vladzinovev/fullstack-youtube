@@ -77,7 +77,7 @@ export const usePlayer=()=>{
                 case 'ArrowLeft':
                     forward()
                     break
-                case '':
+                case 'p':
                     e.preventDefault()
                     toggleVideo()
                     break

@@ -17,7 +17,7 @@ const Video:FC<IVideoPage>=({video})=>{
             
                 <div className={'wrapper_content'}>
                     <div className='left_side'><VideoDetail video={video} channel={video.user || ({} as IUser)}/></div>
-                    <div className='right_side'><Comments/></div>
+                    <div className='right_side'><Comments videoId={video._id}/></div>
                 </div>
             </div>
         </Layout>

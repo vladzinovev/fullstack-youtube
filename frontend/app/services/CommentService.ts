@@ -2,7 +2,7 @@ import { axiosClassic } from "api/interceptors"
 import axios from "axios"
 import { IComment, ICommentDto } from "types/comment.interface"
 
-export const VideoService={
+export const CommentService={
     async getCommentsByVideo(videoId:string){
         return axiosClassic.get<IComment[]>(`/comment/by-video/${videoId}`)
     },

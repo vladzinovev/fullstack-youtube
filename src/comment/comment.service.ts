@@ -13,7 +13,7 @@ export class CommentService {
 
     async byVideoId(videoId:Types.ObjectId, isPrivate =false){
 
-        return this.CommentModel.find({video:videoId}).sort({createdAt:'desc'}).exec()
+        return this.CommentModel.find({video:videoId}).sort({createdAt:'desc'}).populate('user','name location avatarPath isVerified').exec()
     }
 
     async create(userId:Types.ObjectId, dto:CommentDto){

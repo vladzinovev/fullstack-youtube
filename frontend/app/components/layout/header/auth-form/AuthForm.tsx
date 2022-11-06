@@ -30,7 +30,6 @@ const AuthForm:FC=()=>{
         }
     })
 
-    //TODO: REGISTER USER MUTATION
     const {mutate:registerSync}=useMutation('register', (data:IAuthFields)=>AuthService.register(data.email, data.password),{
         onSuccess(data){
             if(setData) setData(data)
