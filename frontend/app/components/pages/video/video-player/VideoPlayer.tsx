@@ -4,18 +4,21 @@ import { usePlayer } from "./usePlayer";
 import styles from './VideoPlayer.module.scss'
 
 const VideoPlayer:FC<{videoPath:string}>=({videoPath})=>{
-    const {videoRef} = usePlayer();
+    const {videoRef, toggleVideo, status } = usePlayer();
     const isPlaying = false;
     return(
         <div className={styles.wrapper}>
             <video ref={videoRef} className={styles.player} src={`${videoPath}#t=8`} preload='matadata'/>
             <div className={styles.button}>
-                <button onClick={()=>null}>
-                    {isPlaying ? <MdPause/> : <MdPlayArrow/>}
+                <button onClick={toggleVideo}>
+                    {status.isPlaying ? 
+                        (status.isShowButton && <MdPause className='animate-fade'/>) : 
+                        (status.isShowButton && <MdPlayArrow className='animate-fade'/>)
+                    }
                 </button> 
             </div>
             <div className={styles.progressBarWrapper}>
-                <div className={styles.progressBar} style={{ width:`${10}%`}}/>
+                <div className={styles.progressBar} style={{ width:`${status.progress}%`}}/>
             </div>
         </div>
     )
