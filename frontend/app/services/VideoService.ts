@@ -26,7 +26,7 @@ export const VideoService={
     },
     
     async getVideoPrivateById(id:string){
-        return axiosClassic.get<IVideo>(`/video/get-private/${id}`)
+        return axios.get<IVideo>(`/video/get-private/${id}`)
     },
 
     async createVideo(){

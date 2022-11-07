@@ -4,7 +4,6 @@ import { MdCheckCircle, MdUpload } from "react-icons/md";
 import styles from './FooterForm.module.scss';
 import cn from 'classnames';
 
-const isUploaded=true;
 
 const FooterForm:FC<{percent:number,isUploaded:boolean}>=({percent,isUploaded})=>{
     return(

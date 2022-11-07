@@ -32,7 +32,7 @@ const Studio:FC=()=>{
                     {isLoading ? (
                         <Loader count={5}/>
                     ): data?.length ? (
-                        <Recommended newVideos={data || []} removeHandler={mutate}/>
+                        <Recommended newVideos={data || []} removeHandler={mutate} isUpdateLink/>
                     ): (
                         <p>Videos not found</p>
                     )}
