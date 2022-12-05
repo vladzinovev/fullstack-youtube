@@ -2,7 +2,7 @@
 import { FC, Fragment} from "react";
 import UploadVideoForm from "./upload-video-form/UploadVideoForm";
 import { IUploadModal } from "./upload-video.interface";
-import styles from './UploadVideo.module.scss';
+import styles from './UploadVideo.module.sass';
 
 import { Dialog, Transition } from '@headlessui/react'
 

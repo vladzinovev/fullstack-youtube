@@ -1,0 +1,33 @@
+.input {
+  position: relative;
+  display: block;
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
+
+.input > input {
+  @apply w-full border-b;
+}
+
+.input > input::-webkit-input-placeholder {
+  color: #A4A4A4;
+}
+
+.input > input:-ms-input-placeholder {
+  color: #A4A4A4;
+}
+
+.input > input::-ms-input-placeholder {
+  color: #A4A4A4;
+}
+
+.input > input::placeholder {
+  color: #A4A4A4;
+}
+
+.error {
+  @apply absolute -bottom-4 left-0 text-sm w-full;
+  font-size: 0.5rem;
+  color: red;
+}
+/*# sourceMappingURL=Field.module.css.map */

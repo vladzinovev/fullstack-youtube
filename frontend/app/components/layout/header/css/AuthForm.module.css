@@ -1,0 +1,44 @@
+.wrapper {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.wrapper .form {
+  @apply shadow-lg p-4 right-2 w-44 z-20 bg-white rounded-md;
+  display: block;
+  position: absolute;
+  top: calc(100% + 1.4rem);
+}
+
+.wrapper .form .login {
+  margin-top: 15px;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+.wrapper .form .register {
+  @apply opacity-40 text-center w-full;
+  display: block;
+  font-size: 0.7rem;
+}
+
+.button {
+  text-decoration: none;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  margin: 0 12px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.button > img {
+  max-width: 25px;
+}
+/*# sourceMappingURL=AuthForm.module.css.map */

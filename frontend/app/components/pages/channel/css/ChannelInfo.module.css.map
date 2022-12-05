@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AAAA,aAAa,CAAA;EACT,MAAM,CAAN,2BAAM;EACN,UAAU,EAAE,MAAM;CAoBrB;;AAtBD,AAII,aAJS,GAIR,IAAI,CAAA;EACD,MAAM,CAAN;sBAAM;EAEN,aAAa,EAAE,GAAG;EAClB,MAAM,EAAE,UAAU;CACrB;;AATL,AAUI,aAVS,GAUP,GAAG,CAAA;EACD,MAAM,CAAN,IAAM;CAST;;AApBL,AAYQ,aAZK,GAUP,GAAG,GAEA,KAAK,CAAA;EACF,MAAM,CAAN,uBAAM;CACT;;AAdT,AAgBQ,aAhBK,GAUP,GAAG,GAMA,SAAS,CAAA;EACN,MAAM,CAAN;wBAAM;CAET;;AAIT,AAAA,QAAQ,CAAA;EACJ,MAAM,CAAN,cAAM;EACN,KAAK,ECzBF,OAAO;CD0Bb",
+    "sources": [
+        "../ChannelInfo/ChannelInfo.module.scss",
+        "../../../../assets/styles/_variables.scss"
+    ],
+    "names": [],
+    "file": "ChannelInfo.module.css"
+}

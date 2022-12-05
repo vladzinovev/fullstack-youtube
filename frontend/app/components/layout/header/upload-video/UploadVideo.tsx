@@ -1,8 +1,6 @@
 import { FC, useState } from "react";
-import { Dialog } from '@headlessui/react'
-import styles from './UploadVideo.module.scss';
 import { BsPlusCircleFill } from "react-icons/bs";
-import stylesIcons from '../icons/IconsRight.module.scss';
+import stylesIcons from '../icons/IconsRight.module.sass';
 import UploadModal from "./UploadModal";
 import { VideoService } from "@/services/VideoService";
 import { useMutation } from "react-query";

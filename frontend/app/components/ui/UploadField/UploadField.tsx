@@ -1,6 +1,6 @@
 import { FC } from "react"
 import { IUploadField } from "./upload-field.interface";
-import styles from './UploadField.module.scss';
+import styles from './UploadField.module.sass';
 import { useUploadFile } from "./useUploadFile";
 
 const UploadField:FC<IUploadField>=({title, onChange, folder,setValue,setIsChosen})=>{

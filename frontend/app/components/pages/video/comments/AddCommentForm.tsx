@@ -37,6 +37,7 @@ const AddCommentForm:FC<{videoId:string, refetch:any}>=({videoId,refetch})=>{
                         })
                     }
                 placeholder='Add a public comment' error={errors.message}/>
+                
                 <button className={'text-2xl absolute right-0 top-0'}>
                     <MdSend/>
                 </button>

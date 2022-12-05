@@ -8,9 +8,10 @@ interface IVideoStatistics {
     views: number
     likes?: number
     createdAt:string
+    subscribers?:number
 }
 
-const VideoStatistics: FC<IVideoStatistics>=({views, likes, createdAt})=>{
+const VideoStatistics: FC<IVideoStatistics>=({views, likes, createdAt,subscribers})=>{
     return(
         <div className={styles.number_info}>
                 <div className={styles.views}>VIEWS {formatNumberToK(views)}</div>
@@ -20,6 +21,10 @@ const VideoStatistics: FC<IVideoStatistics>=({views, likes, createdAt})=>{
                 </div>}
 
                 <div className={styles.date}>{dayjs(new Date(createdAt)).fromNow()}</div>
+
+                {!!subscribers && <div className={styles.subscribers}>
+                    SUBSCRIBERS{formatNumberToK(subscribers)}
+                </div>}
         </div>
     )
 }

@@ -7,7 +7,7 @@ import { FaUserCircle } from "react-icons/fa";
 import Field from "../../../ui/Field/Field";
 import { IAuthFields } from "./auth-form.interface";
 import { validEmail } from "./auth.constants";
-import styles from './AuthForm.module.scss';
+import styles from './AuthForm.module.sass';
 import {useMutation} from 'react-query';
 import { AuthService } from "@/services/auth/auth.service";
 

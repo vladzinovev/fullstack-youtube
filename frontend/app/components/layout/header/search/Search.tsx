@@ -1,6 +1,6 @@
 import VideoItem from "@/components/ui/video/VideoItem";
 import { FC } from "react"
-import styles from './Search.module.scss';
+import styles from './Search.module.sass';
 import { useSearch } from "./useSearch";
 
 const Search:FC=()=>{

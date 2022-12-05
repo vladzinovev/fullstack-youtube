@@ -1,0 +1,4 @@
+.button {
+  @apply py-1 px-3 text-white bg-primary rounded-md transition-colors duration-300 hover:bg-opacity-60;
+}
+/*# sourceMappingURL=Button.module.css.map */

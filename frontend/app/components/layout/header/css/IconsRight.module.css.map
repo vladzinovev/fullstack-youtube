@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,MAAM,CAAC;EACH,QAAQ,EAAE,QAAQ;EAClB,GAAG,EAAE,IAAI;EACT,KAAK,EAAE,IAAI;CAQmB;;AAXlC,AAII,MAJE,GAID,MAAM,CAAC;EACJ,eAAe,EAAE,IAAI;EACrB,OAAO,EAAE,WAAW;EACpB,MAAM,EAAE,MAAM;EACd,WAAW,EAAE,MAAM;EACnB,eAAe,EAAE,MAAM;CAEC;;AAXhC,AAUQ,MAVF,GAID,MAAM,GAMF,GAAG,CAAC;EACD,SAAS,EAAE,IAAI;CAAG",
+    "sources": [
+        "../icons/IconsRight.module.sass"
+    ],
+    "names": [],
+    "file": "IconsRight.module.css"
+}

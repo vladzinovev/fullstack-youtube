@@ -1,0 +1,115 @@
+.video_item {
+  display: block;
+  position: relative;
+}
+
+.video_item > a > .thumbnail {
+  position: relative;
+}
+
+.video_item > a > .thumbnail > .live {
+  position: absolute;
+  border-radius: 2px;
+  color: #fff;
+  left: 10px;
+  top: 10px;
+  font-size: 12px;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 50px;
+  height: 20px;
+  background-color: rgba(229, 27, 23, 0.76);
+}
+
+.video_item > a > .thumbnail > time {
+  position: absolute;
+  border-radius: 2px;
+  color: #fff;
+  left: 10px;
+  bottom: 10px;
+  font-size: 12px;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 64px;
+  height: 26px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.video_item > a > .thumbnail > .avatar {
+  background-color: #fff;
+  padding: 4px;
+  border-radius: 50%;
+  position: absolute;
+  right: 10px;
+  bottom: -30px;
+}
+
+.video_item > a > .thumbnail > .avatar > span {
+  @apply rounded-full;
+}
+
+.video_item > a > .author {
+  color: #A4A4A4;
+  margin-top: 4px;
+}
+
+.video_item > a > .name {
+  font-weight: 500;
+  margin: 10px 0;
+  font-size: 14px;
+}
+
+.video_item > .description {
+  color: #A4A4A4;
+  font-size: 12px;
+  margin-bottom: 20px;
+}
+
+.number_info {
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.number_info > div {
+  font-size: 12px;
+  font-weight: 600;
+  color: #A4A4A4;
+  text-transform: uppercase;
+  margin: 0 17px;
+}
+
+.number_info > div:first-child {
+  margin-left: 0;
+}
+
+.number_info > div.subscribers {
+  @apply text-primary;
+}
+/*# sourceMappingURL=VideoItem.module.css.map */

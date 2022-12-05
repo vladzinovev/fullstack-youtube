@@ -1,0 +1,24 @@
+.article {
+  @apply my-10 text-base text-stone-800;
+}
+
+.detail {
+  @apply p-7 py-0;
+}
+
+.detail .wrapper {
+  @apply flex items-center justify-between;
+}
+
+.detail .text > h1 {
+  @apply font-bold text-2xl m-4;
+}
+
+.detail .likeButton {
+  @apply flex items-center text-lg text-stone-700;
+}
+
+.detail .likeButton .likeIcon {
+  @apply mr-2 text-2xl text-stone-800;
+}
+/*# sourceMappingURL=VideoDetail.module.css.map */

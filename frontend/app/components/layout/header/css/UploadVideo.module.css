@@ -1,0 +1,25 @@
+.modal {
+  @apply relative z-50 {}
+}
+
+.modal .overlay {
+  @apply fixed inset-0 bg-black/30 {}
+}
+
+.modal .overlay .wrapper {
+  @apply fixed inset-0 flex items-center justify-center p-4 {}
+}
+
+.modal .overlay .wrapper > div {
+  @apply flex min-h-full items-center justify-center {}
+}
+
+.modal .overlay .wrapper > div .window {
+  @apply mx-auto bg-white p-6 relative {}  width: 1000px;
+  height: 610px;
+}
+
+.uploadScreen {
+  @apply flex w-full h-full absolute left-0 top-0 {}
+}
+/*# sourceMappingURL=UploadVideo.module.css.map */

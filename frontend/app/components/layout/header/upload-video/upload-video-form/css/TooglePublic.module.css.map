@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,QAAQ,CAAC;EACL,MAAM,CAAN,2BAAM;CAQ0D;;AATpE,AAEI,QAFI,CAEJ,OAAO,CAAC;EACJ,MAAM,CAAN,uDAAM;CAEyH;;AALvI,AAIQ,QAJA,CAEJ,OAAO,CAEH,MAAM,CAAC;EACH,MAAM,CAAN,6GAAM;CAAmH;;AALrI,AAQI,QARI,GAQH,IAAI,CAAC;EACF,MAAM,CAAN,8CAAM;CAAoD",
+    "sources": [
+        "../toogle-public/TooglePublic.module.sass"
+    ],
+    "names": [],
+    "file": "TooglePublic.module.css"
+}

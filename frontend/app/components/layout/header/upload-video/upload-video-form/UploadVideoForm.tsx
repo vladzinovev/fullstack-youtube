@@ -7,7 +7,7 @@ import { IVideoDto } from "types/video.interface";
 import FooterForm from "./footer-form/FooterForm";
 import TooglePublic from "./toogle-public/TooglePublic";
 import VideoInformation from "./video-information/VideoInformation";
-import styles from '../UploadVideo.module.scss';
+import styles from '../UploadVideo.module.sass';
 import { IMediaResponse } from "@/services/MediaService";
 import { useMutation } from "react-query";
 import { VideoService } from "@/services/VideoService";

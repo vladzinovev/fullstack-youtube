@@ -18,7 +18,7 @@ const VideoDetail:FC<{video:IVideo, channel:IUser}>=({video,channel})=>{
 
     return(
         <div className={styles.detail}>
-            <div className={styles.flex}>
+            <div className={styles.wrapper}>
                 <div className={styles.text}>
                     <h1>{video.name}</h1>
                     <VideoStatistics views={video.views} createdAt={video.createdAt} subscribers={channel.subscribersCount}/>

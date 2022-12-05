@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "../video-edit/VideoEdit.module.scss"
+    ],
+    "names": [],
+    "file": "VideoEdit.module.css"
+}

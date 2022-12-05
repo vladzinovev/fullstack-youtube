@@ -1,0 +1,48 @@
+.footer {
+  @apply absolute left-0 bottom-0 w-full p-5 flex justify-between items-center {}
+}
+
+.footer .status {
+  @apply flex items-center text-gray-400 text-base {}
+}
+
+.footer .status .upload-icon, .footer .status .check-icon {
+  @apply text-2xl mr-3 {}
+}
+
+.footer .status .upload-icon {
+  @apply text-primary {}
+}
+
+.footer .status.icons-uploaded .upload-icon {
+  @apply animate-none hidden {}
+}
+
+.footer .status.icons-uploaded .check-icon {
+  @apply opacity-80 {}
+}
+
+@-webkit-keyframes blueAnimate {
+  0% {
+    @apply opacity-30 {}
+  }
+  50% {
+    @apply opacity-90 {}
+  }
+  100% {
+    @apply opacity-90 {}
+  }
+}
+
+@keyframes blueAnimate {
+  0% {
+    @apply opacity-30 {}
+  }
+  50% {
+    @apply opacity-90 {}
+  }
+  100% {
+    @apply opacity-90 {}
+  }
+}
+/*# sourceMappingURL=FooterForm.module.css.map */

@@ -4,7 +4,7 @@ import { FaUserCircle } from "react-icons/fa";
 import { useAuth } from "../../../../hooks/UseAuth";
 import AuthForm from "../auth-form/AuthForm";
 import UploadVideo from "../upload-video/UploadVideo";
-import styles from './IconsRight.module.scss';
+import styles from './IconsRight.module.sass';
 
 const IconsRight:FC=()=>{
     const {user}=useAuth();

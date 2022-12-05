@@ -1,0 +1,30 @@
+.profile_info {
+  @apply flex flex-wrap items-center;
+  text-align: center;
+}
+
+.profile_info > span {
+  @apply rounded-full
+        display: block;
+  border-radius: 50%;
+  margin: 0 auto 7px;
+}
+
+.profile_info > div {
+  @apply ml-4;
+}
+
+.profile_info > div > .name {
+  @apply mb-2 font-bold text-3xl;
+}
+
+.profile_info > div > .location {
+  @apply text-base text-left
+            color: $gray;
+}
+
+.article {
+  @apply my-4 text-base;
+  color: #A4A4A4;
+}
+/*# sourceMappingURL=ChannelInfo.module.css.map */

@@ -2,7 +2,7 @@ import { FC } from "react"
 import { Switch } from '@headlessui/react'
 import { useState } from 'react'
 import cn from 'classnames'
-import styles from './TooglePublic.module.scss'
+import styles from './TooglePublic.module.sass'
 import { ITogglePublic } from "./toogle-public.interface"
 
 const TooglePublic:FC<ITogglePublic>= ({isEnabled,clickHandler})=>{

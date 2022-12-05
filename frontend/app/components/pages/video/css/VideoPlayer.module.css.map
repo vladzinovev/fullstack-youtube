@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,QAAQ,CAAA;EACJ,MAAM,CAAN,QAAM;CAiBT;;AAlBD,AAGI,QAHI,CAGJ,OAAO,CAAA;EACH,MAAM,CAAN,MAAM;CACT;;AALL,AAOI,QAPI,CAOJ,OAAO,CAAA;EACH,MAAM,CAAN,uGAAM;CACT;;AATL,AAWI,QAXI,CAWJ,mBAAmB,CAAA;EACf,MAAM,CAAN,iDAAM;CAKT;;AAjBL,AAcQ,QAdA,CAWJ,mBAAmB,CAGf,YAAY,CAAA;EACR,MAAM,CAAN,iBAAM;CACT",
+    "sources": [
+        "../video-player/VideoPlayer.module.scss"
+    ],
+    "names": [],
+    "file": "VideoPlayer.module.css"
+}

@@ -1,0 +1,49 @@
+@import '../../../../assets/styles/_variables'
+
+.search_top
+    position: relative
+    max-width: 400px
+    margin: 0 auto
+    >label
+        position: relative
+        display: block
+        input
+            border-radius: 30px
+            padding: 8px 15px
+            border: 1px solid $light_gray
+            width: 100%
+            display: block
+            transition: box-shadow .4s ease
+            &::placeholder
+                color: $gray
+                opacity: .8
+                font-style: italic
+            
+            &:focus
+                box-shadow: 0 3px 6px rgba(0,0,0, .04)
+            
+        
+        img
+            position: absolute
+            right: 15px
+            top: 8px
+            max-width: 15px
+        
+    
+    
+
+.result
+    @apply flex flex-wrap absolute z-10 p-5 mt-3
+    display:block
+    position: absolute
+    box-shadow:0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)
+    //animation:scaleIn .35s ease-in-out
+    background-color:white
+    left: -144px
+
+    >div 
+        @apply mr-4 last:mr-0
+        width:24
+    
+    
+

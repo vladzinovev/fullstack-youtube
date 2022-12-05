@@ -1,0 +1,8 @@
+.commentItem {
+  @apply mt-4;
+}
+
+.commentItem > p {
+  @appply text-stone-800 my-2 text-base;
+}
+/*# sourceMappingURL=Comments.module.css.map */

@@ -1,0 +1,20 @@
+.wrapper {
+  @apply relative;
+}
+
+.wrapper .player {
+  @apply w-full;
+}
+
+.wrapper .button {
+  @apply absolute z-10 top-0 left-0 flex justify-center items-center text-7xl text-white w-ful h-full shadow-2xl;
+}
+
+.wrapper .progressBarWrapper {
+  @apply absolute w-full left-0 bottom-0 bg-gray-200 h-1.5;
+}
+
+.wrapper .progressBarWrapper .progressBar {
+  @apply h-full bg-primary;
+}
+/*# sourceMappingURL=VideoPlayer.module.css.map */

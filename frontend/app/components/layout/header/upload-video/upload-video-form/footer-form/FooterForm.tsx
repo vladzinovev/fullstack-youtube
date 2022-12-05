@@ -1,7 +1,7 @@
 import Button from "@/components/ui/Button/Button";
 import { FC } from "react";
 import { MdCheckCircle, MdUpload } from "react-icons/md";
-import styles from './FooterForm.module.scss';
+import styles from './FooterForm.module.sass';
 import cn from 'classnames';
 
 
